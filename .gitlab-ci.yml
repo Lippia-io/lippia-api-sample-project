@@ -4,6 +4,7 @@ Build-app:
   stage: build
   script:
     - git clone https://baldizzoni:${GIT_PASS}@bitbucket.org/crowdarautomation/lippia-report-server-front.git
+    - cd lippia-report-server-front
     - export IMAGE_NAME=crowdar/report-server-front:$BITBUCKET_COMMIT
     - docker login --username $DOCKER_HUB_USER --password $DOCKER_HUB_PASSWORD
     - docker build -f Dockerfile.production -t $IMAGE_NAME .
