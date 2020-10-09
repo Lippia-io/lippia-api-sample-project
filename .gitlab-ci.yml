@@ -1,25 +1,22 @@
 image: tmaier/docker-compose:latest
  
-Build-app:
-  stage: build
+#Build-app:
+#  stage: build
+#  script:
+#    - echo 'deploying app in QA server'
+    
+Testing 1/2:
+  stage: test
   script:
-    - git clone https://baldizzoni:${GIT_PASS}@bitbucket.org/crowdarautomation/lippia-report-server-front.git
-    - cd lippia-report-server-front
-    - export IMAGE_NAME=crowdar/report-server-front:$BITBUCKET_COMMIT
-    - docker login --username $DOCKER_HUB_USER --password $DOCKER_HUB_PASSWORD
-    - docker build -f Dockerfile.production -t $IMAGE_NAME .
-    - docker push $IMAGE_NAME
-    - export IMAGE_NAME=crowdar/report-server-front:latest
-    - docker build -t $IMAGE_NAME .
-    - docker push $IMAGE_NAME
-
-Deploy:
-  stage: deploy
-  before_script:
-    - apk add openssh-client
-    - eval $(ssh-agent -s)
-    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
-    - mkdir -p ~/.ssh
-    - chmod 700 ~/.ssh
-  script: 
-    - ssh root@144.217.240.139 "cd lippia-report-server-front && docker pull crowdar/report-server-front && docker-compose -f docker-compose.yml up -d --build"
+    - docker-compose -f local-docker-compose.yml up --abort-on-container-exit --exit-code-from lippia
+  artifacts:
+    paths:
+      - target/reports/
+#Testing 2/2:
+#  script: 
+#    - echo 'another test process'
+ 
+#Deploy:
+#  stage: deploy
+#  script: 
+#    - echo 'deploying app in custom server'
