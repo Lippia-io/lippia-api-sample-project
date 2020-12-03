@@ -4,7 +4,7 @@
     "Content-Type": "application/json"
   },
   "body": {
-    "name": "test",
+    "name": "test" ,
     "job": "leader"
   }
 }
