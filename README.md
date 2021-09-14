@@ -208,3 +208,13 @@ This project use json to manage request data like url parameters, body data, hea
   
   API
         crowdar.projectType=API
+
+
+
+```
+
+# Gherkin Sample
+
+### Assertions 
+
+![Assertion 1, assertion of json obtained against json expected](docs/images/assertion-1_sample.png)
