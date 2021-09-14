@@ -223,4 +223,4 @@ This project use json to manage request data like url parameters, body data, hea
 
 ## Data composition
 
-![Json Examples](docs/images/jsonExamples.png)
+![Json Examples](docs/images/JsonExamples.png)
