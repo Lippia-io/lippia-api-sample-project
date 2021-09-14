@@ -222,3 +222,5 @@ This project use json to manage request data like url parameters, body data, hea
 ![Assertion 1, assertion of json obtained against json expected](docs/images/assertion-1_sample.png)
 
 ## Data composition
+
+![Json data - image](docs/images/Users.png)
