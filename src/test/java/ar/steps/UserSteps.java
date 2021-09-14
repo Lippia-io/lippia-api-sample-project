@@ -48,7 +48,7 @@ public class UserSteps extends PageSteps {
     public void theProperIdReturnedInTheResponse(String property, String value) {
         if (!value.isEmpty()) {
             Data response = (Data) APIManager.getLastResponse().getResponse();
-            Assert.assertEquals(String.valueOf(response.getUser().getId()), value, "The " + property + " is not in the response");
+            Assert.assertEquals(String.valueOf(response.getData().getId()), value, "The " + property + " is not in the response");
         }
     }
 }

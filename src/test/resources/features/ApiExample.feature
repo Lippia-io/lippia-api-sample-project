@@ -4,15 +4,12 @@ Feature: Api example
   @Example @Success
   Scenario Outline: Example scenario for get user data
     When I perform a '<operation>' to '<entity>' endpoint with the '<jsonName>' and ''
-    Then I will get the proper status code '<statusCode>'
-    And The proper 'Id' '<id>' returned in the response
+    Then status code <statusCode> is obtained
+    And expected response is obtained in '<entity>' with '<expectedResponse>'
 
     Examples:
-      | jsonName    | statusCode | id | operation | entity |
-      | exampleJson | 200        | 2  | GET       | USER   |
-      | createUser  | 201        |    | POST      | USER   |
-      | createUser  | 201        |    | POST      | USER   |
-      | createUser  | 201        |    | POST      | USER   |
+      | jsonName    | statusCode | operation | entity   | expectedResponse   |
+      | exampleJson | 200        | GET       | USER     | users              |
 
   @Example @Fail
   Scenario Outline: Example scenario for error <statusCode>
