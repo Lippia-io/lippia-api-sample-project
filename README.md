@@ -223,4 +223,5 @@ This project use json to manage request data like url parameters, body data, hea
 
 ## Data composition
 
-![Json data - image](docs/images/Users.png)
+        ### Json to be sent in the request                          ### Expected Json
+![Json data - image](docs/images/exampleJson.png)        ![Json data - image](docs/images/Users.png)
