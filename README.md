@@ -225,3 +225,7 @@ This project use json to manage request data like url parameters, body data, hea
 ### Json obtained is null
 
 ![Assertion 3, validates that json obtained is null](docs/images/assertion-3_sample.png)
+
+### Json obtained is an empty array
+
+![Assertion 4, validates that json obtained is an empty array](docs/images/assertion-4_sample.png)
