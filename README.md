@@ -228,3 +228,7 @@ This project use json to manage request data like url parameters, body data, hea
 ### Json obtained against json mapped in the model class
 
 ![Assertion 2, assertion of json obtained against json mapped in the model class](docs/images/assertion-2_sample.png)
+
+### Json obtained is null
+
+![Assertion 3, validates that json obtained is null](docs/images/assertion-3_sample.png)
