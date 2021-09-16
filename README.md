@@ -217,10 +217,8 @@ This project use json to manage request data like url parameters, body data, hea
 ```
 The EntityConfiguration class has located in config folder, and here, is where entities are declared.
 For example:
-
-![EntityConfiguration class](docs/images/EntitiesExplanation.png)
-
 ```
+![EntityConfiguration class](docs/images/EntitiesExplanation.png)
 
 ## Data composition
 
