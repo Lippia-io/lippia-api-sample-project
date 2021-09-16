@@ -10,7 +10,6 @@ public enum EntityConfiguration {
         public Class<?> getEntityService() {
             return UserService.class;
         }
-
     },
     RESPONSE_HEADERS {
         @Override
@@ -21,3 +20,6 @@ public enum EntityConfiguration {
 
     public abstract Class<?> getEntityService();
 }
+
+
+
