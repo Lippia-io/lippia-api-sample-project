@@ -42,6 +42,16 @@ Feature: Api example
       | exampleDelete    | 204        | DELETE       | USER     |
 
   @Example @Success
+  Scenario Outline: Example scenario for get user data empty
+    When I perform a '<operation>' to '<entity>' endpoint with the '<jsonName>' and ''
+    Then status code <statusCode> is obtained
+    And response is empty
+
+    Examples:
+      | jsonName         | statusCode | operation    | entity         |
+      | exampleJson      | 200        | GET          | emptyUsers     |
+
+  @Example @Success
   Scenario Outline: Example scenario for bad request
     When I perform a '<operation>' to '<entity>' endpoint with the '<jsonName>' and ''
     Then status code <statusCode> is obtained
