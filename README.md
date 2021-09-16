@@ -224,3 +224,7 @@ This project use json to manage request data like url parameters, body data, hea
 ## Data composition
 
 ![Json Examples](docs/images/JsonExamples.png)
+
+### Json obtained against json mapped in the model class
+
+![Assertion 2, assertion of json obtained against json mapped in the model class](docs/images/assertion-2_sample.png)
