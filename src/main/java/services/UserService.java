@@ -16,4 +16,8 @@ public class UserService extends MethodsService {
         return post(jsonName, UserCreated.class);
     }
 
+    public static Response delete(String jsonName) {
+        return delete(jsonName, null);
+    }
+
 }

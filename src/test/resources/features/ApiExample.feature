@@ -21,15 +21,35 @@ Feature: Api example
       | jsonName    | statusCode | operation | entity   |
       | exampleJson | 200        | GET       | USER     |
 
-  @Example @Fail
-  Scenario Outline: Example scenario for error <statusCode>
-    Given As an api user for example endpoint
-    When I perform a '<operation>' to '<entity>' endpoint with the '<jsonName>'
-    Then I will get the proper status code '<statusCode>'
+  @Example @Success @First
+  Scenario Outline: Example scenario for bad request
+    When I perform a '<operation>' to '<entity>' endpoint with the '<jsonName>' and ''
+    Then status code <statusCode> is obtained
+    And not response at all is obtained
 
     Examples:
-      | jsonName     | statusCode | operation | entity |
-      | errorRequest | 500        | GET       | USER   |
+      | jsonName         | statusCode | operation    | entity   |
+      | exampleJsonError | 404        | GET          | USER     |
+
+  @Example @Success
+  Scenario Outline: Example scenario for delete user
+    When I perform a '<operation>' to '<entity>' endpoint with the '<jsonName>' and ''
+    Then status code <statusCode> is obtained
+    And not response at all is obtained
+
+    Examples:
+      | jsonName         | statusCode | operation    | entity   |
+      | exampleDelete    | 204        | DELETE       | USER     |
+
+  @Example @Success
+  Scenario Outline: Example scenario for bad request
+    When I perform a '<operation>' to '<entity>' endpoint with the '<jsonName>' and ''
+    Then status code <statusCode> is obtained
+    And text <text> was obtained in response
+
+    Examples:
+      | jsonName         | statusCode | operation    | entity     | text         |
+      | exampleJson2      | 418        | GET          | SAMPLE     | I'm a teapot |
 
 
   @Example @Success
