@@ -160,13 +160,6 @@ So the model class will be something like this:
 
 The idea is have one attribute per field to map on the response
 
-# Gherkin Examples
-
-### JSON Assertions
-
-![Assertion 1, assertion of json obtained against json expected](docs/images/assertion-1_sample.png)
-
-
 # Lippia Architecture	
 
 ![Lippia Architecture API](docs/images/architectureApi.png)
@@ -213,9 +206,9 @@ This project use json to manage request data like url parameters, body data, hea
 
 ```
 
-# Gherkin Sample
+# Gherkin Examples
 
-## Assertions 
+## JSON Assertions
 
 ### Json obtained against json expected
 
