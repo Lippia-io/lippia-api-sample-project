@@ -160,9 +160,9 @@ So the model class will be something like this:
 
 The idea is have one attribute per field to map on the response
 
-# Gherkin Sample
+# Gherkin Examples
 
-### Assertions 
+### JSON Assertions
 
 ![Assertion 1, assertion of json obtained against json expected](docs/images/assertion-1_sample.png)
 
