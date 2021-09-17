@@ -160,7 +160,7 @@ public enum EntityConfiguration {
 ```
 
 UserService CLASS: (note that it´s extended from MethodsService CLASS and here the _HTTP Methods_ are declared,
-in UserService are declared some methods who will be called according to operation value defined for Examples in the Scenario
+in UserService are declared some methods who will be called according to operation value defined for Examples in the Scenario.
 This method, which will receive 2 mandatory parameters:
 the json name and the model class to deserialize the response)
 ```
