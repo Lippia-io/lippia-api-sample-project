@@ -243,3 +243,149 @@ The idea is have one attribute per field to map on the response
 ### Json obtained is an empty array
 
 ![Assertion 4, validates that json obtained is an empty array](docs/images/assertion-4_sample.png)
+
+### Common Steps
+
+The base url is defined in the pom.xml, in the property: <base.api.url></base.api.url>
+e.g.
+<base.api.url>https://reqres.in/api/users</base.api.url>
+
+APIManager -> this class is used to set and get responses of the performed requests
+BASE_URL Variable: contains the base url, which will you get the value of the base.api.url property defined previously
+
+Constructor: EMPTY
+Methods:
+	setLastResponse() -> receives 1 parameter: the response, and it sets the last response of the performed request 
+	getLastResponse() -> returns last response of the performed request 
+	getResponseFromJsonFile() -> 
+	getListResponseFromJsonFile() -> 
+
+Response -> this class is used to set and get some attributes of the response
+Constructor: 4 parameters: status code, message, response, and headers
+ METHODS: 
+-	getters 
+            - getStatusCode() -> returns status code
+            - getMessage() -> returns message
+            - getResponse() -> returns response
+            - getHeader() -> returns headers
+
+
+
+```
+@And("status code (.*) is obtained")
+public void iWillGetTheProperStatusCodeStatusCode(int expStatusCode) {
+	int actualStatusCode = APIManager.getLastResponse().getStatusCode();
+        Assert.assertEquals(actualStatusCode, expStatusCode, "Status code are not equals.");
+}
+
+```
+-This step, perform an assertion of status code obtained against status code expected    
+        - The first line of code, calls getStatusCode() method that´s contained in Response class. 
+                    and it´s, is called by getLastResponse() method that´s is contained in APIManager class.            
+        - The second line of code, perform the assertion.
+
+```   
+    @Then("se obtuvo el response esperado en ([^ ]*) con el ([^ ]*)")
+    @And("expected response is obtained in '([^']*)' with '([^']*)'")
+    public void iWillGetTheProperResponse(String entity, String jsonName) throws IOException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InstantiationException {
+        this.setInjectorParameters(jsonName);
+        this.invokeValidateMethod(entity, this.objectClass, this.objectClass, this.expectedJsonResponse, this.actualJsonResponse);
+    }
+
+```
+-This step performs a validation data from object with the expected data         
+        - In the first line of code, setInjectorParameters: sets actual data.
+        -  In the second line of code, calls invokeValidateMethod that validates expected and actual datas.
+
+```
+    @Then("se obtuvo el response esperado en ([^ ]*) con el ([^ ]*) y sus parametros ([^ ]*)")
+    @And("expected response is obtained in '([^']*)' with '([^ ]*)' and the parameters '([^']*)'")
+    public void iWillGetTheProperResponseWithParameters(String entity, String jsonName, String inputParameters) throws IOException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InstantiationException {
+        this.setInjectorParameters(jsonName);
+        Map<String, String> parameters = MapUtils.splitIntoMap(inputParameters, ",", ":");
+        this.invokeValidateMethod(entity, parameters, this.objectClass, this.expectedJsonResponse);
+    }
+
+```
+-This step performs a validation datas with parameters          
+        - In the first line of code, setInjectorParameters: sets actual data.
+        - In the second line of code, calls invokeValidateMethod that validates expected and actual datas with parameters.
+
+
+```
+    @Then("se obtuvo el response esperado en ([^ ]*) y sus parametros ([^ ]*)")
+    @And("expected response is obtained in '([^']*)' and the parameters '([^']*)'")
+    public void iWillGetTheProperResponseWithObjectAndParameters(String entity, String inputParameters) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, IOException, ClassNotFoundException, InstantiationException {
+        this.setInjectorParameters((String)null);
+        Map<String, String> parameters = MapUtils.splitIntoMap(inputParameters, ",", ":");
+        this.invokeValidateMethod(entity, this.objectClass, Map.class, this.actualJsonResponse, parameters);
+    }
+
+```
+-This step performs a validation datas with object and parameters    
+        - In the first line of code, setInjectorParameters: sets actual data.
+        - In the second line of code, calls invokeValidateMethod that validates expected and actual datas with object and parameters.
+
+```
+    @Then("se obtuvo el response esperado en ([^ ]*) modificando el ([^ ]*)")
+    @And("expected response is obtained in '([^']*)' with '([^']*)' modifying the '([^']*)'")
+    public void iWillGetTheProperResponseModified(String entity, String expectedJsonName) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, IOException, ClassNotFoundException, InstantiationException {
+        this.setInjectorParameters((String)null);
+        this.invokeValidateMethod(entity, String.class, this.objectClass, "response/".concat(expectedJsonName), this.actualJsonResponse);
+    }
+
+```
+-This step performs a validation modified expected data with actual data.
+        - In the first line of code, setInjectorParameters: sets actual data.
+        - In the second line of code, calls invokeValidateMethod;                                                       
+                - Modifies expected data with "response" by using "concat" method.
+                - Validates expected and actual datas.
+
+```
+
+    @Then("se obtuvo el response esperado en ([^ ]*) modificando el ([^ ]*) y sus parametros ([^ ]*)")
+    @And("expected response is obtained in '([^']*)' modifying the '([^ ]*)' and the parameters '([^']*)'")
+    public void iWillGetTheProperResponseModifiedWithParameters(String entity, String expectedJsonName, String inputParameters) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, IOException, ClassNotFoundException, InstantiationException {
+        this.setInjectorParameters((String)null);
+        Map<String, String> parameters = MapUtils.splitIntoMap(inputParameters, ",", ":");
+        this.invokeValidateMethod(entity, parameters, String.class, "response/".concat(expectedJsonName));
+    }
+
+```
+-This step performs a validation modified expected data - actual data with the parameters.
+
+        - In the first line of code, setInjectorParameters: sets actual data.                        
+        - In the second line of code, calls invokeValidateMethod 
+                        - Modifies expected data with "response" by using "concat" method.
+                        - Validates expected and actual datas with parameters.
+
+
+```
+    @Then("se obtuvo el response esperado en ([^ ]*)")
+    @And("expected response is obtained in '([^']*)'")
+    public void iWillGetTheProperResponseWithObject(String entity) throws IOException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException, InstantiationException {
+        this.setInjectorParameters((String)null);
+        this.invokeValidateMethod(entity, "validateFields");
+    }
+
+```
+-This step performs a validation data from method.
+                
+        - In the first line of code, sets actual data.
+        - In the second line of code, calls validateFields method that validates datas.
+
+
+```  
+    @Then("se obtuvo el response esperado en ([^ ]*) con el metodo ([^ ]*)")
+    @And("expected response is obtained in '([^']*)' with the method '([^']*)'")
+    public void iWillGetTheProperResponseWithObject(String entity, String method) throws IOException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException, InstantiationException {
+        this.setInjectorParameters((String)null);
+        this.invokeValidateMethod(entity, method);
+    }
+
+```
+-This step performs a validation data from method.
+                    
+        - In the first line of code, sets actual data.
+        - In the second line of code, calls validateFields method that validates datas with method.
+
