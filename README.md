@@ -153,7 +153,7 @@ public enum EntityConfiguration {
         public Class<?> getEntityService() {
             return UserService.class;
         }
-    },
+    };
     
     public abstract Class<?> getEntityService();
 }
