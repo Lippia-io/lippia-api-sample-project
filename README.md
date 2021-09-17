@@ -214,64 +214,93 @@ This project use json to manage request data like url parameters, body data, hea
 
 ![Assertion 1, assertion of json obtained against json expected](docs/images/assertion-1_sample.png)
 
-```
+### Entities explanation
+
 The EntityConfiguration class has located in config folder, and here, is where entities are declared.
 For example:
 
 EntityConfiguration CLASS: (note that USER entity is declared here, and it returns UserService CLASS)
+```
+public enum EntityConfiguration {
 
-    package api.config;
-
-    import services.ResponseHeadersService;
-    import services.UserService;
-
-    public enum EntityConfiguration {
-
-        USER {
-            @Override
-            public Class<?> getEntityService() {
-                return UserService.class;
-            }
-        },
-        RESPONSE_HEADERS {
-            @Override
-            public Class<?> getEntityService() {
-                return ResponseHeadersService.class;
-            }
-        };
-
-        public abstract Class<?> getEntityService();
-    }
-
-
-UserService CLASS: (note that it´s extended from MethodsService CLASS, and here the _HTTP Methods_ are declared which will receive 2 mandatory parameters: the json name and the model class to deserialize the response)
-
-    package services;
-
-    import api.model.Data;
-    import api.model.UserCreated;
-    import com.crowdar.api.rest.MethodsService;
-    import com.crowdar.api.rest.Response;
-
-    public class UserService extends MethodsService {
-
-        public static Response get(String jsonName) {
-        return get(jsonName, Data.class);
+    USER {
+        @Override
+        public Class<?> getEntityService() {
+            return UserService.class;
         }
-
-        public static Response post(String jsonName) {
-            return post(jsonName, UserCreated.class);
-        }
-
-        public static Response delete(String jsonName) {
-            return delete(jsonName, null);
-        }
-
-    }
+    },
+    
+    public abstract Class<?> getEntityService();
+}
 ```
 
+UserService CLASS: (note that it´s extended from MethodsService CLASS, and here the _HTTP Methods_ are declared which will receive 2 mandatory parameters: the json name and the model class to deserialize the response)
+```
+public class UserService extends MethodsService {
+
+    public static Response get(String jsonName) {
+        return get(jsonName, Data.class);
+    }
+
+    public static Response post(String jsonName) {
+        return post(jsonName, UserCreated.class);
+    }
+
+    public static Response delete(String jsonName) {
+        return delete(jsonName, null);
+    }
+
+}
+```
 
 ## Data composition
+
+In the model examples you can mapped the expected objects from different api responses. We can show you a little example:
+```
+{
+    "data": {
+        "id": 2,
+        "email": "janet.weaver@reqres.in",
+        "first_name": "Janet",
+        "last_name": "Weaver",
+        "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"
+    }
+}
+```
+
+So the model class will be something like this:
+```
+public class User {
+
+    @JsonProperty("id")
+    private int id;
+    @JsonProperty("email")
+    private String email;
+    @JsonProperty("first_name")
+    private String firstName;
+    @JsonProperty("last_name")
+    private String lastNamelast_name;
+    @JsonProperty("avatar")
+    private String avatar;
+
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
+    
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
+    
+    public String getFirstName() { return firstName; }
+    public void setFirstName(String first_name) { this.firstName = first_name; }
+    
+    public String getLastName() { return lastName; }
+    public void setLastName(String last_name) { this.lastName = last_name; }
+    
+    public String getAvatar() { return avatar; }
+    public void setAvatar(String avatar) { this.avatar = avatar; }
+}
+```
+
+The idea is have one attribute per field to map on the response
 
 ![Json Examples](docs/images/JsonExamples.png)
 
