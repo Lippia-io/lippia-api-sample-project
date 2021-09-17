@@ -244,7 +244,7 @@ The idea is have one attribute per field to map on the response
 
 ![Assertion 4, validates that json obtained is an empty array](docs/images/assertion-4_sample.png)
 
-### Common Steps
+### Codeless Steps
 
 The base url is defined in the pom.xml, in the property: <base.api.url></base.api.url>
 e.g.
@@ -271,14 +271,16 @@ Constructor: 4 parameters: status code, message, response, and headers
             - getHeader() -> returns headers  
 
 
+<details><summary>Steps</summary>
+
 ```
 @And("status code (.*) is obtained")
 public void iWillGetTheProperStatusCodeStatusCode(int expStatusCode) {
 	int actualStatusCode = APIManager.getLastResponse().getStatusCode();
         Assert.assertEquals(actualStatusCode, expStatusCode, "Status code are not equals.");
 }
-
 ```
+
 -This step, perform an assertion of status code obtained against status code expected    
         - The first line of code, calls getStatusCode() method that´s contained in Response class. 
                     and it´s, is called by getLastResponse() method that´s is contained in APIManager class.            
@@ -293,6 +295,7 @@ public void iWillGetTheProperStatusCodeStatusCode(int expStatusCode) {
     }
 
 ```
+
 -This step performs a validation data from object with the expected data         
         - In the first line of code, setInjectorParameters: sets actual data.  
         -  In the second line of code, calls invokeValidateMethod that validates expected and actual datas.
@@ -307,6 +310,7 @@ public void iWillGetTheProperStatusCodeStatusCode(int expStatusCode) {
     }
 
 ```
+
 -This step performs a validation datas with parameters          
         - In the first line of code, setInjectorParameters: sets actual data.  
         - In the second line of code, calls invokeValidateMethod that validates expected and actual datas with parameters.
@@ -322,6 +326,7 @@ public void iWillGetTheProperStatusCodeStatusCode(int expStatusCode) {
     }
 
 ```
+
 -This step performs a validation datas with object and parameters      
         - In the first line of code, setInjectorParameters: sets actual data.  
         - In the second line of code, calls invokeValidateMethod that validates expected and actual datas with object and parameters.
@@ -335,6 +340,7 @@ public void iWillGetTheProperStatusCodeStatusCode(int expStatusCode) {
     }
 
 ```
+
 -This step performs a validation modified expected data with actual data.  
         - In the first line of code, setInjectorParameters: sets actual data.  
         - In the second line of code, calls invokeValidateMethod;                                                       
@@ -352,6 +358,7 @@ public void iWillGetTheProperStatusCodeStatusCode(int expStatusCode) {
     }
 
 ```
+
 -This step performs a validation modified expected data - actual data with the parameters.  
         - In the first line of code, setInjectorParameters: sets actual data.                         
         - In the second line of code, calls invokeValidateMethod   
@@ -367,6 +374,7 @@ public void iWillGetTheProperStatusCodeStatusCode(int expStatusCode) {
     }
 
 ```
+
 -This step performs a validation data from method.                
         - In the first line of code, sets actual data.  
         - In the second line of code, calls validateFields method that validates datas.
@@ -381,7 +389,13 @@ public void iWillGetTheProperStatusCodeStatusCode(int expStatusCode) {
     }
 
 ```
+
 -This step performs a validation data from method.                     
         - In the first line of code, sets actual data.
         - In the second line of code, calls validateFields method that validates datas with method.
+
+
+</details>
+
+
 
