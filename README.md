@@ -78,11 +78,11 @@ Folder's description:
 
 |Path   |Description    |
 |-------|----------------|
-|main\java\\...\examples\model\\\*.java|Folder with all the **Mapped Objects** matching steps with java code|
+|main\java\\...\examples\model\\\*.java|Folder with all the **Mapped Objects** matching steps with java code |
 |main\java\\...\examples\config\\\*Steps.java|Folder with all the **Settings** wich match with Gherkin Test Scenarios |
 |test\resources\features\\\*.feature|Folder with all the **feature files** containing **Test Scenarios** and **Sample Data** |
 |test\resources\request\\\*.json|Folder with all the **json files** containing **Request** data |
-|test\resources\response\\\*.json|Folder with all the **json files** containing **Response** data if necessary|
+|test\resources\response\\\*.json|Folder with all the **json files** containing **Response** data if necessary |
 |main\resources|Folder with all configuration needed to run Lippia |
 
 In this example, *ApiExample* is the first endpoint the framework will interact with. The **steps** defined in *UserSteps.java* to execute the *Test Scenarios* defined in Gherkin language. 
@@ -94,80 +94,9 @@ In this example, *ApiExample* is the first endpoint the framework will interact 
 |UserSteps.java   | StepOpject: Code to support the behaviour of each **step** coded into the feature files for the *User* endpoint. This code executes the interaction between the Framework and the api endopoint and match the steps with the code who run interactions. |
 |ApiExample.feature| Feature file: Definition of the **Test Scenarios** with all the **steps** written in Cucumber format (http)|
 
-
-### Model Object Example
-
-In the model examples you can mapped the expected objects from different api responses. We can show you a little example:
-
-```
-{
-    "data": {
-        "id": 2,
-        "email": "janet.weaver@reqres.in",
-        "first_name": "Janet",
-        "last_name": "Weaver",
-        "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"
-    }
-}
-
-```
-So the model class will be something like this: 
-```
-   public class User {
-
-    @JsonProperty("id")
-    private int id;
-    @JsonProperty("email")
-    private String email;
-    @JsonProperty("first_name")
-    private String first_name;
-    @JsonProperty("last_name")
-    private String last_name;
-    @JsonProperty("avatar")
-    private String avatar;
-
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
-    public String getEmail() {
-        return email;
-    }
-    public void setEmail(String email) {
-        this.email = email;
-    }
-    public String getFirst_name() {
-        return first_name;
-    }
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
-    }
-    public String getLast_name() {
-        return last_name;
-    }
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
-    }
-    public String getAvatar() {
-        return avatar;
-    }
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
-    }
-	}
-
-The idea is have one attribute per field to map on the response
-
 # Lippia Architecture	
 
 ![Lippia Architecture API](docs/images/architectureApi.png)
-
-# Scenario Example
-
-![Lippia Scenarios Example API](docs/images/steps_example.png)
-
 
 The scenarios can be written using BDD methodology. 
 	
@@ -201,9 +130,6 @@ This project use json to manage request data like url parameters, body data, hea
   
   API
         crowdar.projectType=API
-
-
-
 ```
 
 # Gherkin Examples
