@@ -130,7 +130,6 @@ This project use json to manage request data like url parameters, body data, hea
   
   API
         crowdar.projectType=API
-```
 
 # Gherkin Examples
 
