@@ -217,8 +217,33 @@ This project use json to manage request data like url parameters, body data, hea
 ```
 The EntityConfiguration class has located in config folder, and here, is where entities are declared.
 For example:
+
+EntityConfiguration CLASS: (note that USER entity is declared here, and it returns UserService CLASS)
+
+    ``package api.config;
+
+    import services.ResponseHeadersService;
+    import services.UserService;
+
+    public enum EntityConfiguration {
+
+        USER {
+            @Override
+            public Class<?> getEntityService() {
+                return UserService.class;
+            }
+        },
+        RESPONSE_HEADERS {
+            @Override
+            public Class<?> getEntityService() {
+                return ResponseHeadersService.class;
+            }
+        };
+
+        public abstract Class<?> getEntityService();
+    }
+
 ```
-![EntityConfiguration class](docs/images/EntitiesExplanation.png)
 
 ## Data composition
 
