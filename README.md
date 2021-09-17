@@ -241,7 +241,7 @@ EntityConfiguration CLASS: (note that USER entity is declared here, and it retur
         };
 
         public abstract Class<?> getEntityService();
-    }
+    } ``
 
 ```
 
