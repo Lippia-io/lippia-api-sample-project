@@ -219,10 +219,8 @@ The EntityConfiguration class has located in config folder, and here, is where e
 For example:
 
 EntityConfiguration CLASS: (note that USER entity is declared here, and it returns UserService CLASS)
-```
 
-``
-package api.config;
+    package api.config;
 
     import services.ResponseHeadersService;
     import services.UserService;
@@ -243,8 +241,35 @@ package api.config;
         };
 
         public abstract Class<?> getEntityService();
-    } 
-``
+    }
+
+
+UserService CLASS: (note that it´s extended from MethodsService CLASS, and here the _HTTP Methods_ are declared which will receive 2 mandatory parameters: the json name and the model class to deserialize the response)
+
+    package services;
+
+    import api.model.Data;
+    import api.model.UserCreated;
+    import com.crowdar.api.rest.MethodsService;
+    import com.crowdar.api.rest.Response;
+
+    public class UserService extends MethodsService {
+
+        public static Response get(String jsonName) {
+        return get(jsonName, Data.class);
+        }
+
+        public static Response post(String jsonName) {
+            return post(jsonName, UserCreated.class);
+        }
+
+        public static Response delete(String jsonName) {
+            return delete(jsonName, null);
+        }
+
+    }
+```
+
 
 ## Data composition
 
