@@ -219,8 +219,10 @@ The EntityConfiguration class has located in config folder, and here, is where e
 For example:
 
 EntityConfiguration CLASS: (note that USER entity is declared here, and it returns UserService CLASS)
+```
 
-    ``package api.config;
+``
+package api.config;
 
     import services.ResponseHeadersService;
     import services.UserService;
@@ -241,9 +243,8 @@ EntityConfiguration CLASS: (note that USER entity is declared here, and it retur
         };
 
         public abstract Class<?> getEntityService();
-    } ``
-
-```
+    } 
+``
 
 ## Data composition
 
