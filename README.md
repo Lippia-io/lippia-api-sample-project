@@ -389,7 +389,3 @@ public void iWillGetTheProperStatusCodeStatusCode(int expStatusCode) {
         - In the first line of code, sets actual data.
         - In the second line of code, calls validateFields method that validates datas with method.
 
-
--testSaltoDeLinea  
-afs  
-fa
