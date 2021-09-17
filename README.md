@@ -253,22 +253,22 @@ e.g.
 APIManager -> this class is used to set and get responses of the performed requests
 BASE_URL Variable: contains the base url, which will you get the value of the base.api.url property defined previously
 
-Constructor: EMPTY
+Constructor: EMPTY  
 Methods:
 	setLastResponse() -> receives 1 parameter: the response, and it sets the last response of the performed request 
 	getLastResponse() -> returns last response of the performed request 
 	getResponseFromJsonFile() -> 
 	getListResponseFromJsonFile() -> 
 
-Response -> this class is used to set and get some attributes of the response
+Response -> this class is used to set and get some attributes of the response  
+
 Constructor: 4 parameters: status code, message, response, and headers
  METHODS: 
--	getters 
-            - getStatusCode() -> returns status code
-            - getMessage() -> returns message
-            - getResponse() -> returns response
-            - getHeader() -> returns headers
-
+-	getters   
+            - getStatusCode() -> returns status code  
+            - getMessage() -> returns message  
+            - getResponse() -> returns response  
+            - getHeader() -> returns headers  
 
 
 ```
@@ -294,7 +294,7 @@ public void iWillGetTheProperStatusCodeStatusCode(int expStatusCode) {
 
 ```
 -This step performs a validation data from object with the expected data         
-        - In the first line of code, setInjectorParameters: sets actual data.
+        - In the first line of code, setInjectorParameters: sets actual data.  
         -  In the second line of code, calls invokeValidateMethod that validates expected and actual datas.
 
 ```
@@ -308,7 +308,7 @@ public void iWillGetTheProperStatusCodeStatusCode(int expStatusCode) {
 
 ```
 -This step performs a validation datas with parameters          
-        - In the first line of code, setInjectorParameters: sets actual data.
+        - In the first line of code, setInjectorParameters: sets actual data.  
         - In the second line of code, calls invokeValidateMethod that validates expected and actual datas with parameters.
 
 
@@ -322,8 +322,8 @@ public void iWillGetTheProperStatusCodeStatusCode(int expStatusCode) {
     }
 
 ```
--This step performs a validation datas with object and parameters    
-        - In the first line of code, setInjectorParameters: sets actual data.
+-This step performs a validation datas with object and parameters      
+        - In the first line of code, setInjectorParameters: sets actual data.  
         - In the second line of code, calls invokeValidateMethod that validates expected and actual datas with object and parameters.
 
 ```
@@ -335,10 +335,10 @@ public void iWillGetTheProperStatusCodeStatusCode(int expStatusCode) {
     }
 
 ```
--This step performs a validation modified expected data with actual data.
-        - In the first line of code, setInjectorParameters: sets actual data.
+-This step performs a validation modified expected data with actual data.  
+        - In the first line of code, setInjectorParameters: sets actual data.  
         - In the second line of code, calls invokeValidateMethod;                                                       
-                - Modifies expected data with "response" by using "concat" method.
+                - Modifies expected data with "response" by using "concat" method.  
                 - Validates expected and actual datas.
 
 ```
@@ -352,13 +352,11 @@ public void iWillGetTheProperStatusCodeStatusCode(int expStatusCode) {
     }
 
 ```
--This step performs a validation modified expected data - actual data with the parameters.
-
-        - In the first line of code, setInjectorParameters: sets actual data.                        
-        - In the second line of code, calls invokeValidateMethod 
+-This step performs a validation modified expected data - actual data with the parameters.  
+        - In the first line of code, setInjectorParameters: sets actual data.                         
+        - In the second line of code, calls invokeValidateMethod   
                         - Modifies expected data with "response" by using "concat" method.
                         - Validates expected and actual datas with parameters.
-
 
 ```
     @Then("se obtuvo el response esperado en ([^ ]*)")
@@ -369,9 +367,8 @@ public void iWillGetTheProperStatusCodeStatusCode(int expStatusCode) {
     }
 
 ```
--This step performs a validation data from method.
-                
-        - In the first line of code, sets actual data.
+-This step performs a validation data from method.                
+        - In the first line of code, sets actual data.  
         - In the second line of code, calls validateFields method that validates datas.
 
 
@@ -384,8 +381,7 @@ public void iWillGetTheProperStatusCodeStatusCode(int expStatusCode) {
     }
 
 ```
--This step performs a validation data from method.
-                    
+-This step performs a validation data from method.                     
         - In the first line of code, sets actual data.
         - In the second line of code, calls validateFields method that validates datas with method.
 
