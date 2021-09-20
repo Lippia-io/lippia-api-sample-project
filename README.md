@@ -136,10 +136,32 @@ This project use json to manage request data like url parameters, body data, hea
 ### We recommend taking a look at the following classes before you start looking at the usage examples
 
 ```
-
-classes explanation - ~@ignore for now
-
+classes explanation - ~@ignore for now   
 ```
+
+**Request.class** is used to set and get some attributes of the request, like:   
+| **Field name** | **Type**            |
+|----------------|---------------------|
+| body           | Object              |
+| url            | String              |
+| endpoint       | String              |
+| headers        | Map<String, String> |
+| urlParameters  | Map<String, String> |
+
+
+**Response.class** is used to set and get some attributes of the response, like:   
+| **Field name** | **Type**  |
+|----------------|-----------|
+| statusCode     | int       |
+| message        | String    |
+| response       | Object    |
+| headers        | Headers   |
+
+**Headers.class** is used to set and get a list of headers
+
+**APIManager.class** is used to set and get responses of the performed requests
+
+**MethodsService.class** is used to perform requests, and validate fields of the response
 
 # Gherkin Examples
 
