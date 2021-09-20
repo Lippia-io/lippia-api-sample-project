@@ -260,9 +260,6 @@ UserService class contains:
         Map<String, String> expectedData = (Map<String, String>) expectedObjectMapped.get("data");
         expectedData.replace("first_name", parameters.get("name"));
 
-        ObjectMapper objectMapper = new ObjectMapper();
-        expected = objectMapper.convertValue(expectedObjectMapped, Object.class);
-
         validateFields(expected, actual);
     }
 
