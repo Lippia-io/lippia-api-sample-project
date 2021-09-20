@@ -131,6 +131,16 @@ This project use json to manage request data like url parameters, body data, hea
   API
         crowdar.projectType=API
 
+
+# Key classes explanation   
+### We recommend taking a look at the following classes before you start looking at the usage examples
+
+```
+
+classes explanation - ~@ignore for now
+
+```
+
 # Gherkin Examples
 
 ## JSON Assertions
