@@ -265,6 +265,7 @@ UserService class contains:
 
 This code is an example of what we must do to make an assertion modifying values ​​of a json with parameters   
 ** Note that if you don't overwrite the validateFields function, the existing ones in MethodsService will be called by default **
+[This overwrite is necessary, if you want to make assertions by modifying an expected json with parameters]
 ```
 
 
