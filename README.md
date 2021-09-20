@@ -236,7 +236,7 @@ The idea is have one attribute per field to map on the response
 
 ![Assertion 5, assertion of json obtained against json expected modified by some parameters](docs/images/assertion-5_sample.png)
 
-It uses a override method called "validateFields", in this case, it receives 2 parameters: Object actual, Object jsonExpected.   
+It uses a override method called "validateFields", in this case, it receives 3 parameters: Object actual, Object jsonExpected, and a list of parameters   
 It works in the following way:   
 
 ```
