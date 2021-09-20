@@ -232,6 +232,45 @@ The idea is have one attribute per field to map on the response
 
 ![Json Examples](docs/images/JsonExamples.png)
 
+### Json obtained against json expected modified by some parameters
+
+![Assertion 5, assertion of json obtained against json expected modified by some parameters](docs/images/assertion-5_sample.png)
+
+It uses a override method called "validateFields", in this case, it receives 2 parameters: Object actual, Object jsonExpected.   
+It works in the following way:   
+
+```
+usersWithParams.json (note that first_name field contains a variable enclosed between {{}})
+    {
+        "data": {
+            "id": 2,
+            "email": "janet.weaver@reqres.in",
+            "first_name": "{{name}}",
+            "last_name": "Weaver",
+            "avatar": "https://reqres.in/img/faces/2-image.jpg"
+        }
+    }
+
+It´s sended to service class returned by entity defined, where:
+UserService class contains:
+
+    @Override
+    public void validateFields(Object expected, Object actual, Map<String, String> parameters) throws Exception {
+        Map<String, Object> expectedObjectMapped = MapUtils.convertObjectToMap(expected);
+        Map<String, String> expectedData = (Map<String, String>) expectedObjectMapped.get("data");
+        expectedData.replace("first_name", parameters.get("name"));
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        expected = objectMapper.convertValue(expectedObjectMapped, Object.class);
+
+        validateFields(expected, actual);
+    }
+
+This code is an example of what we must do to make an assertion modifying values ​​of a json with parameters   
+** Note that if you don't overwrite the validateFields function, the existing ones in MethodsService will be called by default **
+```
+
+
 ### Json obtained against json mapped in the model class
 
 ![Assertion 2, assertion of json obtained against json mapped in the model class](docs/images/assertion-2_sample.png)
