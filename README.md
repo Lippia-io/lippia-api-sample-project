@@ -136,7 +136,8 @@ This project use json to manage request data like url parameters, body data, hea
 ### We recommend taking a look at the following classes before you start looking at the usage examples
 
 ```
-classes explanation - ~@ignore for now   
+classes explanation - ~@ignore for now
+If you want to know more about the use of the following classes, click on the link on your left and you will be redirected to a specific section of it.
 ```
 
 **Request.class** is used to set and get some attributes of the request, like:   
