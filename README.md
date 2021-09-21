@@ -140,29 +140,15 @@ classes explanation - ~@ignore for now
 If you want to know more about the use of the following classes, click on the link on your left and you will be redirected to a specific section of it.
 ```
 
-**Request.class** is used to set and get some attributes of the request, like:   
-| **Field name** | **Type**            |
-|----------------|---------------------|
-| body           | Object              |
-| url            | String              |
-| endpoint       | String              |
-| headers        | Map<String, String> |
-| urlParameters  | Map<String, String> |
+### Summary
 
-
-**Response.class** is used to set and get some attributes of the response, like:   
-| **Field name** | **Type**  |
-|----------------|-----------|
-| statusCode     | int       |
-| message        | String    |
-| response       | Object    |
-| headers        | Headers   |
-
-**Headers.class** is used to set and get a list of headers
-
-**APIManager.class** is used to set and get responses of the performed requests
-
-**MethodsService.class** is used to perform requests, and validate fields of the response
+| Class          | Description                                                                                                    |
+| -------------- | -------------------------------------------------------------------------------------------------------------- |
+| Request        | It´s used to set and get some attributes of the request                                                        |
+| Response       | It´s used to set and get some attributes of the response                                                       |
+| APIManager     | It´s used to set and get responses of the performed requests                                                   |
+| MethodsService | It´s where HTTP Methods are declared, It´s used to perform requests, and contains some methods for validations |
+| Headers        | It´s used to set and get a list of headers                                                                     |
 
 # Gherkin Examples
 
