@@ -4,7 +4,7 @@ Feature: Api example
   @Example @Success
   Scenario Outline: Example scenario for get user data
     When I perform a '<operation>' to '<entity>' endpoint with the '<jsonName>' and ''
-    Then I will get the proper status code '<statusCode>'
+    Then status code <statusCode> is obtained
     And The proper 'Id' '<id>' returned in the response
 
     Examples:
@@ -16,9 +16,8 @@ Feature: Api example
 
   @Example @Fail
   Scenario Outline: Example scenario for error <statusCode>
-    Given As an api user for example endpoint
-    When I perform a '<operation>' to '<entity>' endpoint with the '<jsonName>'
-    Then I will get the proper status code '<statusCode>'
+    When I perform a '<operation>' to '<entity>' endpoint with the '<jsonName>' and ''
+    Then status code <statusCode> is obtained
 
     Examples:
       | jsonName     | statusCode | operation | entity |
@@ -28,7 +27,7 @@ Feature: Api example
   @Example @Success
   Scenario Outline: Example scenario for input parameters
     When I perform a '<operation>' to '<entity>' endpoint with the '<jsonRequestName>' and '<inputParameters>'
-    Then I will get the proper status code '<statusCode>'
+    Then status code <statusCode> is obtained
     And I will get the proper response in '<jsonResponseName>'
 
     Examples:
