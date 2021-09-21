@@ -137,18 +137,19 @@ This project use json to manage request data like url parameters, body data, hea
 
 ```
 classes explanation - ~@ignore for now
-If you want to know more about the use of the following classes, click on the link on your left and you will be redirected to a specific section of it.
+
 ```
 
 ### Summary
-
-| Class          | Description                                                                                                    |
-| -------------- | -------------------------------------------------------------------------------------------------------------- |
-| Request        | It´s used to set and get some attributes of the request                                                        |
-| Response       | It´s used to set and get some attributes of the response                                                       |
-| APIManager     | It´s used to set and get responses of the performed requests                                                   |
-| MethodsService | It´s where HTTP Methods are declared, It´s used to perform requests, and contains some methods for validations |
-| Headers        | It´s used to set and get a list of headers                                                                     |
+_If you want to know more about the use of the following classes, click on the link on your left and you will be redirected to a specific section of it._
+| Class               | Description                                                                                                    |
+| ------------------- | -------------------------------------------------------------------------------------------------------------- |
+| Request             | It´s used to set and get some attributes of the request                                                        |
+| Response            | It´s used to set and get some attributes of the response                                                       |
+| APIManager          | It´s used to set and get responses of the performed requests                                                   |
+| MethodsService      | It´s where HTTP Methods are declared, It´s used to perform requests, and contains some methods for validations |
+| Headers             | It´s used to set and get a list of headers                                                                     |
+| EntityConfiguration | It´s where entities should be declared, and each declared constant should return a service                     |  
 
 # Gherkin Examples
 
