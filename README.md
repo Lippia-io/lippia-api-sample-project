@@ -307,27 +307,6 @@ The base url is defined in the pom.xml, in the property: <base.api.url></base.ap
 e.g.
 <base.api.url>https://reqres.in/api/users</base.api.url>
 
-APIManager -> this class is used to set and get responses of the performed requests
-BASE_URL Variable: contains the base url, which will you get the value of the base.api.url property defined previously
-
-Constructor: EMPTY  
-Methods:
-	setLastResponse() -> receives 1 parameter: the response, and it sets the last response of the performed request 
-	getLastResponse() -> returns last response of the performed request 
-	getResponseFromJsonFile() -> 
-	getListResponseFromJsonFile() -> 
-
-Response -> this class is used to set and get some attributes of the response  
-
-Constructor: 4 parameters: status code, message, response, and headers
- METHODS: 
--	getters   
-            - getStatusCode() -> returns status code  
-            - getMessage() -> returns message  
-            - getResponse() -> returns response  
-            - getHeader() -> returns headers  
-
-
 <details><summary>Steps</summary>
 
 ```
