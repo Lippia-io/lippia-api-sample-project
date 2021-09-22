@@ -128,9 +128,15 @@ This project use json to manage request data like url parameters, body data, hea
   This option can be changed in the pom.xml file
   You can get more information checking the readme file from lippia-core project.
   
-  API
-        crowdar.projectType=API
-
+```
+├── Options
+│   ├── API
+│   │   └── crowdar.projectType = API
+|   ├── Entities
+|   |   └── crowdar.api.entityConfiguration = api.config.entityConfiguration
+|   |   |   └── This option allows the user to say Lippia where to look for the defined constants or entities
+                (note that java folder is ignored, the path must be specified from the java child folder)
+```
 
 # Key classes explanation   
 ### We recommend taking a look at the following classes before you start looking at the usage examples
