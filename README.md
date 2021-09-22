@@ -130,13 +130,13 @@ This project use json to manage request data like url parameters, body data, hea
   
 ```
 ├── config.properties
-|   |   └── base.api.url = urlBase
-|   |   |   └── This option allows the user to say Lippia which urlBase would need to perform requests
-|   |   |
-│   │   └── crowdar.projectType = API
-|   |   |
-|   |   └── crowdar.api.entityConfiguration = api.config.entityConfiguration
-|   |   |   └── This option allows the user to say Lippia where to look for the defined constants or entities
+        └── base.api.url = urlBase
+        |   └── This option allows the user to say Lippia which urlBase would need to perform requests
+        |
+        └── crowdar.projectType = API
+        |
+        └── crowdar.api.entityConfiguration = api.config.entityConfiguration
+            └── This option allows the user to say Lippia where to look for the defined constants or entities
                 (note that java folder is ignored, the path must be specified from the java child folder)
 ```
 
