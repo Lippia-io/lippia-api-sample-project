@@ -135,11 +135,6 @@ This project use json to manage request data like url parameters, body data, hea
 # Key classes explanation   
 ### We recommend taking a look at the following classes before you start looking at the usage examples
 
-```
-classes explanation - ~@ignore for now
-
-```
-
 ### Summary
 _If you want to know more about the use of the following classes, click on the link on your left and you will be redirected to a specific section of it._
 | Class               | Description                                                                                                    |
@@ -302,6 +297,9 @@ This code is an example of what we must do to make an assertion modifying values
 ![Assertion 4, validates that json obtained is an empty array](docs/images/assertion-4_sample.png)
 
 ### Codeless Steps
+```
+~@ignore for now
+```
 
 The base url is defined in the pom.xml, in the property: <base.api.url></base.api.url>
 e.g.
