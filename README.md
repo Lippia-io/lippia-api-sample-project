@@ -310,10 +310,6 @@ This code is an example of what we must do to make an assertion modifying values
 ~@ignore for now
 ```
 
-The base url is defined in the pom.xml, in the property: <base.api.url></base.api.url>
-e.g.
-<base.api.url>https://reqres.in/api/users</base.api.url>
-
 <details><summary>Steps</summary>
 
 ```
