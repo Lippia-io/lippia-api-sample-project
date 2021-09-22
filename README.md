@@ -130,6 +130,9 @@ This project use json to manage request data like url parameters, body data, hea
   
 ```
 ├── Options
+|   ├── Base URL
+|   |   └── base.api.url = urlBase
+|   |   |   └── This option allows the user to say Lippia which urlBase would need to perform requests
 │   ├── API
 │   │   └── crowdar.projectType = API
 |   ├── Entities
