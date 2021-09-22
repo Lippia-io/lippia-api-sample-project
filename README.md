@@ -129,13 +129,12 @@ This project use json to manage request data like url parameters, body data, hea
   You can get more information checking the readme file from lippia-core project.
   
 ```
-├── Options
-|   ├── Base URL
+├── config.properties
 |   |   └── base.api.url = urlBase
 |   |   |   └── This option allows the user to say Lippia which urlBase would need to perform requests
-│   ├── API
+|   |   |
 │   │   └── crowdar.projectType = API
-|   ├── Entities
+|   |   |
 |   |   └── crowdar.api.entityConfiguration = api.config.entityConfiguration
 |   |   |   └── This option allows the user to say Lippia where to look for the defined constants or entities
                 (note that java folder is ignored, the path must be specified from the java child folder)
