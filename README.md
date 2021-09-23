@@ -182,7 +182,8 @@ _If you want to know more about the use of the following classes, click on the l
 | Headers             | It´s used to set and get a list of headers                                                                     |
 | EntityConfiguration | It´s where entities should be declared, and each declared constant should return a service                     |  
 
-# Gherkin Examples / Codeless Steps
+
+# Gherkin examples using _Codeless steps_ 
 
 ## JSON Assertions
 
