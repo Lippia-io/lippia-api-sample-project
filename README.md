@@ -125,7 +125,7 @@ This project use json to manage request data like url parameters, body data, hea
 
 ## Project type options:
 - The project type option allows the user to say Lippia which library would need to download. For this project is setted the API one that only have all library needed for this kind of project.
-  This option can be changed in the pom.xml file
+  This option can be changed in the pom.xml file   
   You can get more information checking the readme file from lippia-core project.
   
 ```
@@ -156,7 +156,7 @@ public class ExampleParallelTestRunner extends TestNGParallelRunner {}
 ```
 
 Followed by that, you should implement an XML that points to the Runner   
-For example, **testng.xml** contains    
+For example, **parallelTestng.xml** contains    
 ```
 <suite name="BDD Test Suite" verbose="1" parallel="methods" data-provider-thread-count="10" thread-count="10" configfailurepolicy="continue">
     <test name="Test 1" annotations="JDK" preserve-order="true">
