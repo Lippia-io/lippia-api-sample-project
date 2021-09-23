@@ -1,6 +1,21 @@
 # LIPPIA API Example Project
 
-![ARQ-Lippia](docs/images/arquitecture.png)
+## API Architecture
+
+![Lippia Architecture API](docs/images/architectureApi.png)
+
+The scenarios can be written using BDD methodology. 
+	
+	Given as a precondition
+	
+	When as actions
+	
+	Then as validations
+	
+	
+On each declared step you can insert the calls defined from service classes
+
+[~@Ignore, explain]
 
 ## System Requirements : 
 + git client: https://www.atlassian.com/git/tutorials/install-git 
@@ -95,21 +110,6 @@ In this example, *ApiExample* is the first endpoint the framework will interact 
 |User.java   | Model: you can declare every attribute expected on the responses that you want to interact with. You need to add one new file for each response you want to model in your tests. |
 |UserSteps.java   | StepOpject: Code to support the behaviour of each **step** coded into the feature files for the *User* endpoint. This code executes the interaction between the Framework and the api endopoint and match the steps with the code who run interactions. |
 |ApiExample.feature| Feature file: Definition of the **Test Scenarios** with all the **steps** written in Cucumber format (http)|
-
-# Lippia Architecture	
-
-![Lippia Architecture API](docs/images/architectureApi.png)
-
-The scenarios can be written using BDD methodology. 
-	
-	Given as a precondition
-	
-	When as actions
-	
-	Then as validations
-	
-	
-On each declared step you can insert the calls defined from service classes
 
 # Json Structure for request data
 
