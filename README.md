@@ -281,7 +281,7 @@ public class User {
 
 The idea is have one attribute per field to map on the response
 
-![Json Examples](docs/images/JsonExamples.png)
+<!-- ![Json Examples](docs/images/JsonExamples.png) -->
 
 ### Json obtained against json expected modified by some parameters
 
