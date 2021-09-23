@@ -150,9 +150,9 @@ To have a proper configuration of Lippia and Cucumber, you should have a Runner 
 
 ### Implementations
 ```
-public class SupervielleTestsRunner extends TestNgRunner {}
+public class ExampleTestsRunner extends TestNgRunner {}
 
-public class SupervielleParallelTestRunner extends TestNGParallelRunner {}
+public class ExampleParallelTestRunner extends TestNGParallelRunner {}
 ```
 
 Followed by that, you should implement an xml that points to the Runner   
@@ -161,7 +161,7 @@ For example, **testng.xml** contains
 <suite name="BDD Test Suite" verbose="1" parallel="methods" data-provider-thread-count="10" thread-count="10" configfailurepolicy="continue">
     <test name="Test 1" annotations="JDK" preserve-order="true">
         <classes> 
-            <class name="SupervielleParallelTestRunner"/>
+            <class name="ExampleParallelTestRunner"/>
         </classes> 
     </test>
 </suite> 
