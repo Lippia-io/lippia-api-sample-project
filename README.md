@@ -140,6 +140,34 @@ This project use json to manage request data like url parameters, body data, hea
                 (note that java folder is ignored, the path must be specified from the java child folder)
 ```
 
+# Runner configuration   
+### Cucumber and TestNG integration
+To have a proper configuration of Lippia and Cucumber, you should have a Runner class that extends from   
+| RunnerType          | ExtendsFrom          |
+| ------------------- | -------------------- |
+| Secuencial          | TestNgRunner         |
+| Parallel            | TestNGParallelRunner |
+
+### Implementations
+```
+public class SupervielleTestsRunner extends TestNgRunner {}
+
+public class SupervielleParallelTestRunner extends TestNGParallelRunner {}
+```
+
+Followed by that, you should implement an xml that points to the Runner   
+For example, **testng.xml** contains    
+```
+<suite name="BDD Test Suite" verbose="1" parallel="methods" data-provider-thread-count="10" thread-count="10" configfailurepolicy="continue">
+    <test name="Test 1" annotations="JDK" preserve-order="true">
+        <classes> 
+            <class name="SupervielleParallelTestRunner"/>
+        </classes> 
+    </test>
+</suite> 
+```
+This xml, is telling the Runner to run the tests in 10 threads
+
 # Key classes explanation   
 ### We recommend taking a look at the following classes before you start looking at the usage examples
 
