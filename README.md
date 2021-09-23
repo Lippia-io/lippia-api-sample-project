@@ -1,8 +1,12 @@
 # LIPPIA API Example Project
 
-## API Architecture
+## Architecture
 
 ![Lippia Architecture API](docs/images/architectureApi.png)
+
+- Through Spring rest client, lippia supports API tests, being able to reuse definitions from other tests as well as including this behavior in tests of other types such as mobile, web, etc.
+
+- We believe that the best approach to automate testing from conception to deployment is to use BDD (Behaviour Driven Development) to include not just Developers, but Testers and Business Analysts, and that is why...   
 
 The scenarios can be written using BDD methodology. 
 	
@@ -14,8 +18,6 @@ The scenarios can be written using BDD methodology.
 	
 	
 On each declared step you can insert the calls defined from service classes
-
-[~, explain]
 
 ## System Requirements : 
 + git client: https://www.atlassian.com/git/tutorials/install-git 
