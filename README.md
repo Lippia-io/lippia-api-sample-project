@@ -1,6 +1,6 @@
 # LIPPIA API Example Project
 
-## Architecture
+<!--## Architecture
 
 ![Lippia Architecture API](docs/images/architectureApi.png)
 
@@ -17,7 +17,7 @@ The scenarios can be written using BDD methodology.
 	Then as validations
 	
 	
-On each declared step you can insert the calls defined from service classes
+On each declared step you can insert the calls defined from service classes -->
 
 ## System Requirements : 
 + git client: https://www.atlassian.com/git/tutorials/install-git 
