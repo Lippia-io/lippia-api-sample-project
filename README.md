@@ -166,7 +166,7 @@ For example, **testng.xml** contains
     </test>
 </suite> 
 ```
-This xml, is telling the Runner to run the tests in 10 threads
+This xml, is telling the Runner called "ExampleParallelTestRunner" to run the tests in 10 threads
 
 # Key classes explanation   
 ### We recommend taking a look at the following classes before you start looking at the usage examples
