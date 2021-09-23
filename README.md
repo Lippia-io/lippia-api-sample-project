@@ -337,6 +337,7 @@ This code is an example of what we must do to make an assertion modifying values
 
 ![Assertion 4, validates that json obtained is an empty array](docs/images/assertion-4_sample.png)
 
+<!--
 ### Codeless Steps / Code explanation
 ```
 ~@ignore for now
@@ -466,7 +467,7 @@ public void iWillGetTheProperStatusCodeStatusCode(int expStatusCode) {
         - In the second line of code, calls validateFields method that validates datas with method.
 
 
-</details>
+</details> -->
 
 
 
