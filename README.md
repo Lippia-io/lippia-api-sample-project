@@ -15,6 +15,8 @@ The scenarios can be written using BDD methodology.
 	
 On each declared step you can insert the calls defined from service classes
 
+[~, explain]
+
 ## System Requirements : 
 + git client: https://www.atlassian.com/git/tutorials/install-git 
 + docker 18.09: https://docs.docker.com/install/linux/docker-ce/ubuntu/ 
@@ -22,12 +24,12 @@ On each declared step you can insert the calls defined from service classes
 
 ## Docker stack
 
-The following project includes the basic Docker Lippia Containers to run this  web sample project. You can choose to run the code from your favourite IDE, run from console or from Jenkins using the Docker Stack.
+The following project includes the basic Docker Lippia Containers to run this API sample project. You can choose the code from your favourite IDE, to run from console or from Jenkins by using the Docker Stack.
 To install and start a local instalation with Docker containers go to **Getting started** at the end of this guide. 
 
 # Purpose: 
 
-The following project has the purpose of demonstrate and let test automation developers to to test API requests using Lippia Automation Framework based on Rest Client library. 
+The following project has the purpose of demonstrate and let test automation developers to test API requests by using Lippia Automation Framework based on Rest Client library. 
 This sample project includes the required components as binaries, docker containers and configuration files to simply download and run a set of sample tests in your local computer, using the Lippia container stack described bellow.
 
 # Getting started
@@ -124,9 +126,9 @@ This project use json to manage request data like url parameters, body data, hea
     [`Getting started - Windows User`](docs/README_Windows.md)
 
 ## Project type options:
-- The project type option allows the user to say Lippia which library would need to download. For this project is setted the API one that only have all library needed for this kind of project.
+- The project type option allows the user to say Lippia which library will need to download. For this project is set the API one that only have all library needed for this kind of project.
   This option can be changed in the pom.xml file   
-  You can get more information checking the readme file from lippia-core project.
+  You can get more information checking the README file from lippia-core project.
   
 ```
 ├── config.properties
