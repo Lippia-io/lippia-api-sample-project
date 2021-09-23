@@ -154,7 +154,7 @@ _If you want to know more about the use of the following classes, click on the l
 | Headers             | It´s used to set and get a list of headers                                                                     |
 | EntityConfiguration | It´s where entities should be declared, and each declared constant should return a service                     |  
 
-# Gherkin Examples
+# Gherkin Examples / Codeless Steps
 
 ## JSON Assertions
 
@@ -304,7 +304,7 @@ This code is an example of what we must do to make an assertion modifying values
 
 ![Assertion 4, validates that json obtained is an empty array](docs/images/assertion-4_sample.png)
 
-### Codeless Steps
+### Codeless Steps / Code explanation
 ```
 ~@ignore for now
 ```
