@@ -155,7 +155,7 @@ public class ExampleTestsRunner extends TestNgRunner {}
 public class ExampleParallelTestRunner extends TestNGParallelRunner {}
 ```
 
-Followed by that, you should implement an xml that points to the Runner   
+Followed by that, you should implement an XML that points to the Runner   
 For example, **testng.xml** contains    
 ```
 <suite name="BDD Test Suite" verbose="1" parallel="methods" data-provider-thread-count="10" thread-count="10" configfailurepolicy="continue">
@@ -166,7 +166,7 @@ For example, **testng.xml** contains
     </test>
 </suite> 
 ```
-This xml, is telling the Runner called "ExampleParallelTestRunner" to run the tests in 10 threads
+This XML, is telling the Runner called "ExampleParallelTestRunner" to run the tests in 10 threads
 
 # Key classes explanation   
 ### We recommend taking a look at the following classes before you start looking at the usage examples
