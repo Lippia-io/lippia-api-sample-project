@@ -1,5 +1,7 @@
 # LIPPIA API Example Project
 
+![ARQ-Lippia](docs/images/arquitecture.png)
+
 ## System Requirements : 
 + git client: https://www.atlassian.com/git/tutorials/install-git 
 + docker 18.09: https://docs.docker.com/install/linux/docker-ce/ubuntu/ 
