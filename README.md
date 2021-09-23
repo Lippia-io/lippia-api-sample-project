@@ -15,7 +15,7 @@ The scenarios can be written using BDD methodology.
 	
 On each declared step you can insert the calls defined from service classes
 
-[~@Ignore, explain]
+[~, explain]
 
 ## System Requirements : 
 + git client: https://www.atlassian.com/git/tutorials/install-git 
