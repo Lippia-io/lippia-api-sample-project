@@ -77,7 +77,7 @@ This sample project includes the required components as binaries, docker contain
 
       OUTPUT:
         M2_HOME=C:\Program Files\apache-maven-3.8.2
-        Path=%PATH%;%M2_HOME%\bin;
+        PATH=%PATH%;%M2_HOME%\bin;
     ```
 
   + ### Third Step
