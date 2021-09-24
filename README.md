@@ -63,15 +63,22 @@ This sample project includes the required components as binaries, docker contain
 
     If you don't see a similar output:
     + Make sure you have the maven path configured   
-
+    #### Linux user
     ```
     $ grep -Ew '(.*)(M2_HOME)' ~/.bashrc
 
       OUTPUT:
         M2_HOME=/opt/apache-maven-3.8.2
         PATH=$PATH:$M2_HOME/bin
+    ```   
+    #### Windows user
     ```
+    $ set
 
+      OUTPUT:
+        M2_HOME=C:\Program Files\apache-maven-3.8.2
+        Path=%PATH%;%M2_HOME%\bin;
+    ```
 
   + ### Third Step
 
