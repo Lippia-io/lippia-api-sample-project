@@ -19,29 +19,80 @@ The scenarios can be written using BDD methodology.
 	
 On each declared step you can insert the calls defined from service classes -->
 
-## System Requirements : 
+## System Requirements: 
++ jdk: https://docs.oracle.com/en/java/javase/index.html 
++ maven: https://maven.apache.org/download.cgi 
 + git client: https://www.atlassian.com/git/tutorials/install-git 
-+ docker 18.09: https://docs.docker.com/install/linux/docker-ce/ubuntu/ 
-+ docker compose 1.24: https://docs.docker.com/compose/install/
-
-## Docker stack
-
-The following project includes the basic Docker Lippia Containers to run this API sample project. You can choose the code from your favourite IDE, to run from console or from Jenkins by using the Docker Stack.
-To install and start a local instalation with Docker containers go to **Getting started** at the end of this guide. 
-
-# Purpose: 
-
-The following project has the purpose of demonstrate and let test automation developers to test API requests by using Lippia Automation Framework based on Rest Client library. 
-This sample project includes the required components as binaries, docker containers and configuration files to simply download and run a set of sample tests in your local computer, using the Lippia container stack described bellow.
++ docker 18.09: https://docs.docker.com/install/linux/docker-ce/ubuntu/  _OPTIONAL_ 
++ docker compose 1.24: https://docs.docker.com/compose/install/ _OPTIONAL_ 
 
 # Getting started
 
-## Executing tests in you local machine 
-- go to root project folder and you will find a pom.xml file
-- run the following command : 
-```
-sudo docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from lippia
-```
+The following project has the purpose of demonstrate and let test automation developers to test API requests by using Lippia Automation Framework based on Rest Client library. 
+This sample project includes the required components as binaries, docker containers and configuration files to simply download and run a set of sample tests in your local computer, using the Lippia container stack.
+
+- ## Running with Maven
+
+  + ### First Step
+
+    + Download and unzip the source repository for this guide, or clone it using Git:
+      ```
+      $ git clone https://bitbucket.org/crowdarautomation/lippia-api-sample-project.git
+      ```
+
+    + Go to root directory:
+      ```
+      $ cd lippia-api-sample-project
+      ```   
+
+  + ### Second Step
+
+      If you want to run tests locally, you need maven as a minimum requirement   
+      Make sure you have installed maven correctly
+
+    ```
+    $ mvn --version
+
+    OUTPUT:
+      Apache Maven 3.8.2 (ea98e05a04480131370aa0c110b8c54cf726c06f)
+      Maven home: /opt/apache-maven-3.8.2
+      Java version: 13.0.5.1, vendor: Debian, runtime: /usr/lib/jvm/java-13-openjdk-amd64
+      Default locale: en_US, platform encoding: UTF-8
+      OS name: "linux", version: "5.10.0-6parrot1-amd64", arch: "amd64", family: "unix"
+    ```
+
+    If you don't see a similar output, make sure you have the maven path configured
+
+    ```
+    $ grep -Ew '(.*)(M2_HOME)' ~/.bashrc
+
+    OUTPUT:
+      M2_HOME=/opt/apache-maven-3.8.2
+      PATH=$PATH:$M2_HOME/bin
+    ```
+
+
+  + ### Third Step
+
+    To run the tests with maven, we must execute the following command:   
+
+    ```
+    $ mvn clean test -PSecuencial
+    ```
+
+- ## Running with Docker
+
+    ## Docker stack
+
+    The following project includes the basic Docker Lippia Containers to run this API sample project. You can choose the code from your favourite IDE, to run from console or from Jenkins by using the Docker Stack.
+    To install and start a local instalation with Docker containers go to **Getting started** at the end of this guide. 
+
+    ## Executing tests in you local machine 
+    - go to root project folder and you will find a pom.xml file
+    - run the following command : 
+    ```
+    sudo docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from lippia
+    ```
 	
 ## Project structure
 
