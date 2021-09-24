@@ -104,7 +104,7 @@ This sample project includes the required components as binaries, docker contain
 	
 # Reports
 
-### Reports are generated in the folder called target, which will be generated once the execution of the test suite is finished.  
+### Reports are generated in the folder called **target**, which will be generated once the execution of the test suite is finished.  
 ```
 ├── lippia-api-sample-project
 |   ├── docs
