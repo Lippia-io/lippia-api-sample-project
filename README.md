@@ -35,23 +35,23 @@ This sample project includes the required components as binaries, docker contain
 
   + ### First Step
 
-    + Download and unzip the source repository for this guide, or clone it using Git:
-      ```
-      $ git clone https://bitbucket.org/crowdarautomation/lippia-api-sample-project.git
-      ```
+    + Download and unzip the source repository for this guide, or clone it using Git:   
+    ```
+    $ git clone https://gitlab.com/lippia/products/samples/lippia-api-sample-project.git
+    ```
 
-    + Go to root directory:
-      ```
-      $ cd lippia-api-sample-project
-      ```   
+    + Go to root directory:   
+    ```
+    $ cd lippia-api-sample-project
+    ```   
 
   + ### Second Step
 
     If you want to run tests locally, you need maven as a minimum requirement   
     + Make sure you have installed maven correctly   
 
-      ```
-      $ mvn --version
+    ```
+    $ mvn --version
 
       OUTPUT:
         Apache Maven 3.8.2 (ea98e05a04480131370aa0c110b8c54cf726c06f)
@@ -59,27 +59,27 @@ This sample project includes the required components as binaries, docker contain
         Java version: 13.0.5.1, vendor: Debian, runtime: /usr/lib/jvm/java-13-openjdk-amd64
         Default locale: en_US, platform encoding: UTF-8
         OS name: "linux", version: "5.10.0-6parrot1-amd64", arch: "amd64", family: "unix"
-      ```
+    ```
 
     If you don't see a similar output:
     + Make sure you have the maven path configured   
 
-      ```
-      $ grep -Ew '(.*)(M2_HOME)' ~/.bashrc
+    ```
+    $ grep -Ew '(.*)(M2_HOME)' ~/.bashrc
 
       OUTPUT:
         M2_HOME=/opt/apache-maven-3.8.2
         PATH=$PATH:$M2_HOME/bin
-      ```
+    ```
 
 
   + ### Third Step
 
     + To run the tests with maven, we must execute the following command:   
 
-      ```
-      $ mvn clean test -PSecuencial
-      ```
+    ```
+    $ mvn clean test -PSecuencial
+    ```
 
 - ## Running with Docker
 
