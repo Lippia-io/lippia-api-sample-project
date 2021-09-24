@@ -105,10 +105,10 @@ This sample project includes the required components as binaries, docker contain
 # Reports
 
 We believe that the reports should express the results of our tests in the most legible, detailed and pleasant way possible, so that in this way, our clients have at their disposal a report on the operation and behavior of their product, as well as the performance of the team. That is why Lippia, in addition to supporting the integration with **ExtentReport**, provides a **ReportServer** for each client.   
-Next, we will see the structure of the project and from where we can access them
+Next, we will see the structure of the project and from where we can access them.
 
 ### Reports are generated in the folder called **target**, which will be generated once the execution of the test suite is finished.   
-They will be generated using the ExtentReport library   
+Note that the following structure is part of the report generated with ExtentReport library.
 ```
 ├── lippia-api-sample-project
 |   ├── docs
