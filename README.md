@@ -102,6 +102,21 @@ This sample project includes the required components as binaries, docker contain
     sudo docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from lippia
     ```
 	
+# Reports
+
+### The reports are generated in the folder called **target** once the execution of the test suite is finished   
+```
+├── lippia-api-sample-project
+|   ├── docs
+|   |   └── ...
+|   ├── src
+|   |   └── ...
+│   ├── target
+│   |   └── reports
+|   |       └── index.html
+|   └── ...
+```
+
 ## Project structure
 
 A typical Lippia Test Automation project usually looks like this 
