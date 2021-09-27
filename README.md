@@ -116,6 +116,10 @@ This sample project includes the required components as binaries, docker contain
         #### Execute tests in you local machine   
         
         - Go to root project folder and you will find a pom.xml file   
+        ```
+        $ cd lippia-api-sample-project
+        ```   
+        
         - Run the following command:   
         ```
         $ sudo docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from lippia
