@@ -221,21 +221,6 @@ In this example, *ApiExample* is the first endpoint the framework will interact 
 |UserSteps.java   | StepOpject: Code to support the behaviour of each **step** coded into the feature files for the *User* endpoint. This code executes the interaction between the Framework and the api endopoint and match the steps with the code who run interactions. |
 |ApiExample.feature| Feature file: Definition of the **Test Scenarios** with all the **steps** written in Cucumber format (http)|
 
-# Json Structure for request data
-
-This project use json to manage request data like url parameters, body data, headers and url endpoints. The following picture shows the structure of the json
-
-
-![Lippia Scenarios Example API](docs/images/jsonStructure.png)
-
-<!--
-# Getting started
-    
-- If you are Linux user 
-    [`Getting started - Linux User`](docs/README_Linux.md)
-- If you are Windws user
-    [`Getting started - Windows User`](docs/README_Windows.md)
--->
 ## Project type options:
 - The project type option allows the user to say Lippia which library will need to download. For this project is set the API one that only have all library needed for this kind of project.
   This option can be changed in the pom.xml file   
@@ -243,15 +228,21 @@ This project use json to manage request data like url parameters, body data, hea
   
 ```
 ├── config.properties
-        └── base.api.url = urlBase
+        ├── base.api.url = urlBase
         |   └── This option allows the user to say Lippia which urlBase would need to perform requests
         |
-        └── crowdar.projectType = API
+        ├── crowdar.projectType = API
         |
         └── crowdar.api.entityConfiguration = api.config.entityConfiguration
             └── This option allows the user to say Lippia where to look for the defined constants or entities
                 (note that java folder is ignored, the path must be specified from the java child folder)
 ```
+
+# Json Structure for request data
+
+This project use json to manage request data like url parameters, body data, headers and url endpoints. The following picture shows the structure of the json
+
+![Lippia Scenarios Example API](docs/images/jsonStructure.png)
 
 # Runner configuration   
 ### Cucumber and TestNG integration
