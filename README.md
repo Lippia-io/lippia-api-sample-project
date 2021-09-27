@@ -23,8 +23,8 @@ On each declared step you can insert the calls defined from service classes -->
 + jdk: https://docs.oracle.com/en/java/javase/index.html 
 + maven: https://maven.apache.org/download.cgi 
 + git client: https://www.atlassian.com/git/tutorials/install-git 
-+ docker 18.09: https://docs.docker.com/install/linux/docker-ce/ubuntu/  _OPTIONAL_ 
-+ docker compose 1.24: https://docs.docker.com/compose/install/ _OPTIONAL_ 
++ docker 18.09+: https://docs.docker.com/install/linux/docker-ce/ubuntu/  _OPTIONAL_ 
++ docker compose 1.24+: https://docs.docker.com/compose/install/ _OPTIONAL_ 
 
 # Getting started
 
@@ -93,23 +93,42 @@ This sample project includes the required components as binaries, docker contain
     ## Docker stack
 
     The following project includes the basic Docker Lippia Containers to run this API sample project. You can choose the code from your favourite IDE, to run from console or from Jenkins by using the Docker Stack.
-    To install and start a local instalation with Docker containers go to **Getting started** at the end of this guide. 
 
-    ## Executing tests in you local machine 
-    - go to root project folder and you will find a pom.xml file
-    - run the following command : 
-    ```
-    $ sudo docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from lippia
+    Note that if you don't have installed docker & docker-compose, [Install here](#system-requirements)
 
-      OUTPUT:
-        Creating network "lippia-api-sample-project_default" with the default driver
-        Creating lippia-api-sample-project_lippia_1 ... done
-        Attaching to lippia-api-sample-project_lippia_1
-        lippia_1  | Running custom Command mvn clean test -PSecuencial -Dcucumber.tags=@Success
-        ...
-    ```
+    + ### First Step
+      - Make sure you have installed docker-engine correctly   
+      ```
+      $ docker --version
+        OUTPUT:
+          Docker version 19.03.15, build 99e3ed8919
+      ```   
+    
+    + ### Second Step
+      - Make sure you have installed docker-compose correctly
+      ```
+      $ docker-compose --version
+        OUTPUT:
+          docker-compose version 1.29.2, build 5becea4c
+      ```   
+
+    + ### Third Step   
+        #### Execute tests in you local machine   
+        
+        - Go to root project folder and you will find a pom.xml file   
+        - Run the following command:   
+        ```
+        $ sudo docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from lippia
+
+          OUTPUT:
+            Creating network "lippia-api-sample-project_default" with the default driver
+            Creating lippia-api-sample-project_lippia_1 ... done
+            Attaching to lippia-api-sample-project_lippia_1
+            lippia_1  | Running custom Command mvn clean test -PSecuencial -Dcucumber.tags=@Success
+            ...
+        ```   
 	
-# Reports
+# Reports[](url)
 
 We believe that the reports should express the results of our tests in the most legible, detailed and pleasant way possible, so that in this way, our clients have at their disposal a report on the operation and behavior of their product, as well as the performance of the team. That is why Lippia, in addition to supporting the integration with **ExtentReport**, provides a **ReportServer** for each client.   
 Next, we will see the structure of the project and from where we can access them.
