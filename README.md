@@ -99,14 +99,14 @@ This sample project includes the required components as binaries, docker contain
     - go to root project folder and you will find a pom.xml file
     - run the following command : 
     ```
-    sudo docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from lippia
+    $ sudo docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from lippia
 
-    OUTPUT:
-      Creating network "lippia-api-sample-project_default" with the default driver
-      Creating lippia-api-sample-project_lippia_1 ... done
-      Attaching to lippia-api-sample-project_lippia_1
-      lippia_1  | Running custom Command mvn clean test -PSecuencial -Dcucumber.tags=@Success
-      ...
+      OUTPUT:
+        Creating network "lippia-api-sample-project_default" with the default driver
+        Creating lippia-api-sample-project_lippia_1 ... done
+        Attaching to lippia-api-sample-project_lippia_1
+        lippia_1  | Running custom Command mvn clean test -PSecuencial -Dcucumber.tags=@Success
+        ...
     ```
 	
 # Reports
