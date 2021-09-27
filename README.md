@@ -228,13 +228,14 @@ This project use json to manage request data like url parameters, body data, hea
 
 ![Lippia Scenarios Example API](docs/images/jsonStructure.png)
 
+<!--
 # Getting started
     
 - If you are Linux user 
     [`Getting started - Linux User`](docs/README_Linux.md)
 - If you are Windws user
     [`Getting started - Windows User`](docs/README_Windows.md)
-
+-->
 ## Project type options:
 - The project type option allows the user to say Lippia which library will need to download. For this project is set the API one that only have all library needed for this kind of project.
   This option can be changed in the pom.xml file   
