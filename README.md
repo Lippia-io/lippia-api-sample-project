@@ -94,7 +94,7 @@ This sample project includes the required components as binaries, docker contain
 
     The following project includes the basic Docker Lippia Containers to run this API sample project. You can choose the code from your favourite IDE, to run from console or from Jenkins by using the Docker Stack.
 
-    Note that if you don't have installed docker & docker-compose, [Install here](#system-requirements)
+    Note that if you don't have installed docker & docker-compose, [Click here](#system-requirements)
 
     + ### First Step
       - Make sure you have installed docker-engine correctly   
