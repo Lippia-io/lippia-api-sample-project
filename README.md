@@ -151,6 +151,10 @@ Note that the following structure is part of the report generated with ExtentRep
 |   └── ...
 ```
 
+### Graphic example   
+![ExtentReport example](docs/images/reporteExtent.png)
+
+
 ## Project structure
 
 A typical Lippia Test Automation project usually looks like this 
