@@ -152,7 +152,7 @@ Note that the following structure is part of the report generated with ExtentRep
 ```
 
 ### Graphic example   
-![ExtentReport example](docs/images/reporteExtent.png)
+![ExtentReport example](docs/images/extentReportExample.png)
 
 
 ## Project structure
