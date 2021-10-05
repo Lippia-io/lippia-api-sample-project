@@ -1,23 +1,8 @@
 # LIPPIA API Example Project
 
-<!--## Architecture
-
-![Lippia Architecture API](docs/images/architectureApi.png)
-
-- Through Spring rest client, lippia supports API tests, being able to reuse definitions from other tests as well as including this behavior in tests of other types such as mobile, web, etc.
-
-- We believe that the best approach to automate testing from conception to deployment is to use BDD (Behaviour Driven Development) to include not just Developers, but Testers and Business Analysts, and that is why...   
-
-The scenarios can be written using BDD methodology. 
-	
-	Given as a precondition
-	
-	When as actions
-	
-	Then as validations
-	
-	
-On each declared step you can insert the calls defined from service classes -->
+# Purpose
+The following project has the purpose of demonstrate and let test automation developers to test API requests by using Lippia Automation Framework based on Rest Client library. 
+This sample project includes the required components as binaries, docker containers and configuration files to simply download and run a set of sample tests in your local computer, using the Lippia container stack.
 
 ## System Requirements: 
 + jdk: https://docs.oracle.com/en/java/javase/index.html 
@@ -28,109 +13,8 @@ On each declared step you can insert the calls defined from service classes -->
 
 # Getting started
 
-The following project has the purpose of demonstrate and let test automation developers to test API requests by using Lippia Automation Framework based on Rest Client library. 
-This sample project includes the required components as binaries, docker containers and configuration files to simply download and run a set of sample tests in your local computer, using the Lippia container stack.
-
-- ## Running with Maven
-
-  + ### First Step
-
-    + Download and unzip the source repository for this guide, or clone it using Git:   
-    ```
-    $ git clone https://gitlab.com/lippia/products/samples/lippia-api-sample-project.git
-    ```
-
-    + Go to root directory:   
-    ```
-    $ cd lippia-api-sample-project
-    ```   
-
-  + ### Second Step
-
-    If you want to run tests locally, you need maven as a minimum requirement   
-    + Make sure you have installed maven correctly   
-
-    ```
-    $ mvn --version
-
-      OUTPUT:
-        Apache Maven 3.8.2 (ea98e05a04480131370aa0c110b8c54cf726c06f)
-        Maven home: /opt/apache-maven-3.8.2
-        Java version: 13.0.5.1, vendor: Debian, runtime: /usr/lib/jvm/java-13-openjdk-amd64
-        Default locale: en_US, platform encoding: UTF-8
-        OS name: "linux", version: "5.10.0-6parrot1-amd64", arch: "amd64", family: "unix"
-    ```
-
-    If you don't see a similar output:
-    + Make sure you have the maven path configured   
-    #### Linux user
-    ```
-    $ grep -Ew '(.*)(M2_HOME)' ~/.bashrc
-
-      OUTPUT:
-        M2_HOME=/opt/apache-maven-3.8.2
-        PATH=$PATH:$M2_HOME/bin
-    ```   
-    #### Windows user
-    ```
-    $ set
-
-      OUTPUT:
-        M2_HOME=C:\Program Files\apache-maven-3.8.2
-        PATH=%PATH%;%M2_HOME%\bin;
-    ```
-
-  + ### Third Step
-
-    + To run the tests with maven, we must execute the following command:   
-
-    ```
-    $ mvn clean test -PSecuencial
-    ```
-
-- ## Running with Docker
-
-    ## Docker stack
-
-    The following project includes the basic Docker Lippia Containers to run this API sample project. You can choose the code from your favourite IDE, to run from console or from Jenkins by using the Docker Stack.
-
-    Note that if you don't have installed docker & docker-compose, [Click here](#system-requirements)
-
-    + ### First Step
-      - Make sure you have installed docker-engine correctly   
-      ```
-      $ docker --version
-        OUTPUT:
-          Docker version 19.03.15, build 99e3ed8919
-      ```   
-    
-    + ### Second Step
-      - Make sure you have installed docker-compose correctly
-      ```
-      $ docker-compose --version
-        OUTPUT:
-          docker-compose version 1.29.2, build 5becea4c
-      ```   
-
-    + ### Third Step   
-        #### Execute tests in you local machine   
-        
-        - Go to root project folder and you will find a pom.xml file   
-        ```
-        $ cd lippia-api-sample-project
-        ```   
-        
-        - Run the following command:   
-        ```
-        $ sudo docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from lippia
-
-          OUTPUT:
-            Creating network "lippia-api-sample-project_default" with the default driver
-            Creating lippia-api-sample-project_lippia_1 ... done
-            Attaching to lippia-api-sample-project_lippia_1
-            lippia_1  | Running custom Command mvn clean test -PSecuencial -Dcucumber.tags=@Success
-            ...
-        ```   
+- Running only with Maven [`Getting started - Running only with Maven`](docs/README_Maven.md)
+- Running with Docker [`Getting started - Running with Docker`](docs/README_Docker.md)
 	
 # Reports[](url)
 
