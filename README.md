@@ -5,11 +5,11 @@ The following project has the purpose of demonstrate and let test automation dev
 This sample project includes the required components as binaries, docker containers and configuration files to simply download and run a set of sample tests in your local computer, using the Lippia container stack.
 
 ## System Requirements: 
-+ jdk: https://docs.oracle.com/en/java/javase/index.html 
-+ maven: https://maven.apache.org/download.cgi 
-+ git client: https://www.atlassian.com/git/tutorials/install-git 
-+ docker 18.09+: https://docs.docker.com/install/linux/docker-ce/ubuntu/  _OPTIONAL_ 
-+ docker compose 1.24+: https://docs.docker.com/compose/install/ _OPTIONAL_ 
++ JDK: https://docs.oracle.com/en/java/javase/index.html 
++ Maven: https://maven.apache.org/download.cgi 
++ Git client: https://www.atlassian.com/git/tutorials/install-git 
++ Docker 18.09+: https://docs.docker.com/install/linux/docker-ce/ubuntu/  _OPTIONAL_ 
++ Docker compose 1.24+: https://docs.docker.com/compose/install/ _OPTIONAL_
 
 # Getting started
 
