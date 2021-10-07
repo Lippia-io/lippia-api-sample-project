@@ -1,4 +1,7 @@
 ## System Requirements:
++ JDK: https://docs.oracle.com/en/java/javase/index.html 
++ Maven: https://maven.apache.org/download.cgi 
++ Git client: https://www.atlassian.com/git/tutorials/install-git 
 + Docker 18.09+: https://docs.docker.com/install/linux/docker-ce/ubuntu/
 + Docker compose 1.24+: https://docs.docker.com/compose/install/
 
