@@ -132,33 +132,94 @@ This project use json to manage request data like url parameters, body data, hea
 
 ![Lippia Scenarios Example API](docs/images/jsonStructure.png)
 
-# Runner configuration   
-### Cucumber and TestNG integration
-To have a proper configuration of Lippia and Cucumber, you should have a Runner class that extends from   
-| RunnerType          | ExtendsFrom          |
-| ------------------- | -------------------- |
-| Secuencial          | TestNgRunner         |
-| Parallel            | TestNGParallelRunner |
-
-### Implementations
+## Runners
+***
 ```
-public class ExampleTestsRunner extends TestNgRunner {}
-
-public class ExampleParallelTestRunner extends TestNGParallelRunner {}
+├── lippia-api-sample-project
+│   ├── docs
+│   │   └── ...
+│   ├── src
+│   │   ├── main
+│   ├── java
+│   │     └── ...
+│   ├── resources 
+│   │     └── ...
+│   ├── test
+│   │     ├── resources
+│   │     │ └── ...
+│   │ 
+│   ├── pom.xml
+│   ├── testngParalell.xml
+│   ├── testng.xml
+│          
+│  
 ```
 
-Followed by that, you should implement an XML that points to the Runner   
-For example, **parallelTestng.xml** contains    
+The test cases are executed using **TestNG** class. This class is the main entry point for running tests in the TestNG framework. By creating their own TestNG object and invoke it on a testng.xml.
+
+|**Attribute** | **Description** | 
+|--------------|-----------------| 
+|name   | The name of this suite. It is a **mandatory** attribute. |  
+|verbose   | Whether TestNG should run different threads to run this suite. |  
+|parallel   | Whether TestNG should run different threads to run this suite. |
+|thread-count   | The number of threads to use, if parallel mode is enabled (ignored other-wise). |  
+|annotations   | The type of annotations you are using in your tests. |  
+|time-out   | The default timeout that will be used on all the test methods found in this test. |  
+
+### testng.xml  
+
 ```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="BDD Test Suite" verbose="1" parallel="tests" thread-count="1" configfailurepolicy="continue">
+    <test name="Login and Update Profile Test" annotations="JDK" preserve-order="true">
+        <classes>
+            <class name="ApiExampleProjectTestRunner"/>
+        </classes>
+    </test>
+</suite>
+
+```
+
+### testngParalell.xml  
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="BDD Test Suite" verbose="1" parallel="methods" data-provider-thread-count="10" thread-count="10" configfailurepolicy="continue">
     <test name="Test 1" annotations="JDK" preserve-order="true">
-        <classes> 
-            <class name="ExampleParallelTestRunner"/>
-        </classes> 
+        <classes>
+            <class name="ApiExampleProjectParalellTestRunner"/>
+        </classes>
     </test>
-</suite> 
+</suite>
 ```
-This XML, is telling the Runner called "ExampleParallelTestRunner" to run the tests in 10 threads
+
+This file captures your entire testing and makes it easy to describe all your test suites and their parameters in one file, which you can check in your code repository or e-mail to coworkers.
+
+### pom.xml
+
+A Project Object Model or POM is the fundamental unit of work in Maven. It is an XML file that contains information about the project and configuration details used by Maven to build the project. It contains default values for most projects. Examples for this is the build directory, which is target; the source directory, which is **src/main/java**; the test source directory, which is **src/test/resources**; and so on. When executing a task or goal, Maven looks for the POM in the current directory. It reads the POM, gets the needed configuration information, then executes the goal.
+
+### How to select Sequential or Paralell Runner:
+ 
+**Sequential Runner:**  
+    
+- In the pom.xml file, it looks for the POM in the current directory and assign the value of **testng.xml**.  
+    
+- This would be as follows:
+```  
+        <apiExample.runner>testng.xml</apiExample.runner>
+```         
+
+**Paralell Runner:**  
+    
+- In the pom.xml file, it looks for the POM in the current directory and assign the value of **testngParalell.xml**  
+    
+- This would be as follows:  
+```
+        <apiExample.runner>testngParalell.xml</apiExample.runner>
+```        
 
 # Key classes explanation   
 ### We recommend taking a look at the following classes before you start looking at the usage examples
