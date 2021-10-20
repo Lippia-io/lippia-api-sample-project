@@ -5,31 +5,38 @@ Feature: Api example
   Scenario Outline: Example scenario for get user data
     When I perform a '<operation>' to '<entity>' endpoint with the '<jsonName>' and ''
     Then status code <statusCode> is obtained
-    And The proper 'Id' '<id>' returned in the response
+    And expected response is obtained in '<entity>' with '<expectedResponse>'
 
     Examples:
-      | jsonName    | statusCode | id | operation | entity |
-      | exampleJson | 200        | 2  | GET       | USER   |
-      | createUser  | 201        |    | POST      | USER   |
-      | createUser  | 201        |    | POST      | USER   |
-      | createUser  | 201        |    | POST      | USER   |
-
-  @Example @Fail
-  Scenario Outline: Example scenario for error <statusCode>
-    When I perform a '<operation>' to '<entity>' endpoint with the '<jsonName>' and ''
-    Then status code <statusCode> is obtained
-
-    Examples:
-      | jsonName     | statusCode | operation | entity |
-      | errorRequest | 500        | GET       | USER   |
-
+      | jsonName    | statusCode | operation | entity   | expectedResponse   |
+      | exampleJson | 200        | GET       | USER     | users              |
 
   @Example @Success
-  Scenario Outline: Example scenario for input parameters
-    When I perform a '<operation>' to '<entity>' endpoint with the '<jsonRequestName>' and '<inputParameters>'
+  Scenario Outline: Example scenario for get user data
+    When I perform a '<operation>' to '<entity>' endpoint with the '<jsonName>' and ''
     Then status code <statusCode> is obtained
-    And I will get the proper response in '<jsonResponseName>'
+    And expected response is obtained in '<entity>'
 
     Examples:
-      | jsonRequestName        | statusCode | operation | entity           | inputParameters         | jsonResponseName        |
-      | responseHeadersRequest | 200        | GET       | RESPONSE_HEADERS | value1:bar1,value2:bar2 | responseHeadersResponse |
+      | jsonName    | statusCode | operation | entity   |
+      | exampleJson | 200        | GET       | USER     |
+
+  @Example @Success
+  Scenario Outline: Example scenario for delete user
+    When I perform a '<operation>' to '<entity>' endpoint with the '<jsonName>' and ''
+    Then status code <statusCode> is obtained
+    And not response at all is obtained
+
+    Examples:
+      | jsonName         | statusCode | operation    | entity   |
+      | exampleJson      | 204        | DELETE       | USER     |
+
+  @Example @Success
+  Scenario Outline: Example scenario for get users
+    When I perform a '<operation>' to '<entity>' endpoint with the '<jsonName>' and ''
+    Then status code <statusCode> is obtained
+    And expected response is obtained in '<entity>' with '<jsonExpected>' and the parameters '<parameters>'
+
+    Examples:
+      | jsonName    | statusCode | operation | entity | jsonExpected    | parameters  |
+      | exampleJson | 200        | GET       | USER   | usersWithParams | name:Janet  |

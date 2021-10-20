@@ -19,7 +19,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <base.api.url>https://reqres.in/api/users</base.api.url>
         <cucumber.stepsDefinitions>--glue ar/steps --glue com/crowdar/api/rest</cucumber.stepsDefinitions>
-		<cucumber.hooks>--glue com/crowdar/bdd/cukes --glue ar/apiExampleProject/hook</cucumber.hooks>
+        <cucumber.hooks>--glue com/crowdar/bdd/cukes --glue ar/apiExampleProject/hook</cucumber.hooks>
 		<cucumber.tags>@Success</cucumber.tags>
         <crowdar.cucumber.plugins>--plugin pretty --plugin api.report.Reporter --plugin api.report.CucumberReporter:</crowdar.cucumber.plugins>
 		<crowdar.cucumber.option>src/test/resources/features ${cucumber.hooks} ${cucumber.stepsDefinitions} --tags 'not @Ignore' --tags ${cucumber.tags} ${crowdar.cucumber.plugins}</crowdar.cucumber.option>
