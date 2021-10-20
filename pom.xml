@@ -6,7 +6,7 @@
     <parent>
         <groupId>io.lippia</groupId>
         <artifactId>root</artifactId>
-        <version>3.2.1.1</version>
+        <version>3.2.3.8</version>
     </parent>
 
     <groupId>com.Crowdar</groupId>
@@ -21,7 +21,7 @@
         <cucumber.stepsDefinitions>--glue ar/steps --glue com/crowdar/api/rest</cucumber.stepsDefinitions>
         <cucumber.hooks>--glue com/crowdar/bdd/cukes --glue ar/apiExampleProject/hook</cucumber.hooks>
 		<cucumber.tags>@Success</cucumber.tags>
-        <crowdar.cucumber.plugins>--plugin pretty --plugin api.report.Reporter --plugin api.report.CucumberReporter:</crowdar.cucumber.plugins>
+        <crowdar.cucumber.plugins>--plugin pretty --plugin api.report.CucumberReporter:</crowdar.cucumber.plugins>
 		<crowdar.cucumber.option>src/test/resources/features ${cucumber.hooks} ${cucumber.stepsDefinitions} --tags 'not @Ignore' --tags ${cucumber.tags} ${crowdar.cucumber.plugins}</crowdar.cucumber.option>
         <crowdar.projectType>API</crowdar.projectType>
 
@@ -49,7 +49,7 @@
         <dependency>
 	        <groupId>io.lippia</groupId>
 	        <artifactId>core</artifactId>
-	        <version>3.2.1.1</version>
+	        <version>3.2.3.8</version>
         </dependency>
         <dependency>
             <groupId>io.lippia.report</groupId>
