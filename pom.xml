@@ -44,6 +44,28 @@
                 <apiExample.runner>testngParalell.xml</apiExample.runner>
             </properties>
         </profile>
+
+        <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+		<!--   Profiles related to Runners ejecutions         -->
+		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+		<profile> 
+			<id>secuencial</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<runner>testngSecuencial.xml</runner>
+			</properties>
+		</profile>
+
+		<profile> 
+			<id>parallel</id>
+			<properties>
+				<runner>testngParallel.xml</runner>
+			</properties>
+		</profile>
+
     </profiles>
     <dependencies>
         <dependency>
