@@ -32,7 +32,7 @@
             <activation>
             </activation>
             <properties>
-                <apiExample.runner>testng.xml</apiExample.runner>
+                <apiExample.runner>testngSecuencial.xml</apiExample.runner>
             </properties>
         </profile>
         <profile>
