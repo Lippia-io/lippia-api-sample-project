@@ -107,12 +107,12 @@
                         <LIPPIA_RS_API_HOST>https://rsapi.automation.crowdaronline.com</LIPPIA_RS_API_HOST>
                         <LIPPIA_RS_PROJECT_NAME>API Sample</LIPPIA_RS_PROJECT_NAME>
                         <LIPPIA_RS_REPORT_NAME>Local - build</LIPPIA_RS_REPORT_NAME>
-                        <TEST_MANAGER_API_HOST>https://testmanager.crowdaracademy.lippia.io/</TEST_MANAGER_API_HOST>
+                        <TEST_MANAGER_API_HOST>https://runs.crowdaracademy.lippia.io</TEST_MANAGER_API_HOST>
                         <TEST_MANAGER_API_PORT></TEST_MANAGER_API_PORT>
-                        <TEST_MANAGER_RUN_NAME>SampleRun</TEST_MANAGER_RUN_NAME>
+                        <TEST_MANAGER_RUN_NAME>lippia-api-sample</TEST_MANAGER_RUN_NAME>
                         <TEST_MANAGER_PROJECT_CODE>LASP</TEST_MANAGER_PROJECT_CODE>
-                        <TEST_MANAGER_USERNAME>maximiliano.dominguez</TEST_MANAGER_USERNAME>
-                        <TEST_MANAGER_PASSWORD>mdd40702357</TEST_MANAGER_PASSWORD>
+                        <TEST_MANAGER_USERNAME>GenericUserLTM</TEST_MANAGER_USERNAME>
+                        <TEST_MANAGER_PASSWORD>GenericUserLTM</TEST_MANAGER_PASSWORD>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
