@@ -98,9 +98,7 @@
                         <suiteXmlFile>${apiExample.runner}</suiteXmlFile>
                     </suiteXmlFiles>
                     <systemPropertyVariables>
-						<LIPPIA_RS_API_HOST>https://rsapi.automation.crowdaronline.com</LIPPIA_RS_API_HOST>
-	                    <LIPPIA_RS_PROJECT_NAME>API Sample</LIPPIA_RS_PROJECT_NAME>
-	                    <LIPPIA_RS_REPORT_NAME>Local - build</LIPPIA_RS_REPORT_NAME>
+
                 	</systemPropertyVariables>
                 </configuration>
             </plugin>
