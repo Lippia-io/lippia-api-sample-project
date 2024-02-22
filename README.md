@@ -34,6 +34,16 @@ By default this project uses Cucumber Reporting plugin with console output. This
 This integration uses an adaptar that automatically ingests results of Scenarios into Lippia Test Manager.
 You just simply need to implement [*LTM-adapter-cucumber4-JVM*](https://github.com/Crowdar/LTM-adapter-cucumber4-JVM) and you can see the results in Lippia Test Manager as an Automated Run Result.
 
+To configure your automation project to inject results into LTM, you should do the following things:
+ - Include property reference **${test-manager.report}** in cucumber options (pom.xml)
+ - To set following properties, you need obtain an account in LTM (visit the web https://www.lippia.io/ to start free trial account)
+ - Properties:
+   - TEST_MANAGER_API_HOST: https://example.com
+   - TEST_MANAGER_RUN_NAME: id run in project
+   - TEST_MANAGER_PROJECT_CODE: id project to inject test execution results
+   - TEST_MANAGER_USERNAME: username Account LTM
+   - TEST_MANAGER_PASSWORD: password Account LTM
+
 <img src="docs/images/LTM-RunLists.png" width="800px" alt="Runs List"></img>
 
 <img src="docs/images/LTM-RunAutomatedResult.png" width="800px" alt="Run Automated Result sample"></img>

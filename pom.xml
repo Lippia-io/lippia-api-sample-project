@@ -76,11 +76,6 @@
         </dependency>
         <dependency>
             <groupId>io.lippia.report</groupId>
-            <artifactId>cucumber4-adapter</artifactId>
-            <version>1.7.1</version>
-        </dependency>
-        <dependency>
-            <groupId>io.lippia.report</groupId>
             <artifactId>ltm-cucumber4-adapter</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
@@ -104,9 +99,6 @@
                         <suiteXmlFile>${apiExample.runner}</suiteXmlFile>
                     </suiteXmlFiles>
                     <systemPropertyVariables>
-                        <LIPPIA_RS_API_HOST>https://rsapi.automation.crowdaronline.com</LIPPIA_RS_API_HOST>
-                        <LIPPIA_RS_PROJECT_NAME>API Sample</LIPPIA_RS_PROJECT_NAME>
-                        <LIPPIA_RS_REPORT_NAME>Local - build</LIPPIA_RS_REPORT_NAME>
                         <TEST_MANAGER_API_HOST>https://runs.crowdaracademy.lippia.io</TEST_MANAGER_API_HOST>
                         <TEST_MANAGER_API_PORT></TEST_MANAGER_API_PORT>
                         <TEST_MANAGER_RUN_NAME>lippia-api-sample</TEST_MANAGER_RUN_NAME>
