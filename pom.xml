@@ -23,7 +23,7 @@
         <cucumber.tags>@Success</cucumber.tags>
         <crowdar.cucumber.plugins>--plugin pretty --plugin api.report.CucumberReporter:</crowdar.cucumber.plugins>
         <test-manager.report>--plugin api.report.TestManagerReporter:</test-manager.report>
-		<crowdar.cucumber.option>src/test/resources/features ${cucumber.hooks} ${cucumber.stepsDefinitions} --tags 'not @Ignore' --tags ${cucumber.tags} ${crowdar.cucumber.plugins} ${test-manager.report}</crowdar.cucumber.option>
+		<crowdar.cucumber.option>src/test/resources/features ${cucumber.hooks} ${cucumber.stepsDefinitions} --tags 'not @Ignore' --tags ${cucumber.tags} ${crowdar.cucumber.plugins}</crowdar.cucumber.option>
         <crowdar.projectType>API</crowdar.projectType>
     </properties>
     <profiles>
@@ -98,12 +98,12 @@
                         <suiteXmlFile>${apiExample.runner}</suiteXmlFile>
                     </suiteXmlFiles>
                     <systemPropertyVariables>
-                        <TEST_MANAGER_API_HOST>https://runs.crowdaracademy.lippia.io</TEST_MANAGER_API_HOST>
+                        <TEST_MANAGER_API_HOST></TEST_MANAGER_API_HOST>
                         <TEST_MANAGER_API_PORT></TEST_MANAGER_API_PORT>
-                        <TEST_MANAGER_RUN_NAME>lippia-api-sample</TEST_MANAGER_RUN_NAME>
-                        <TEST_MANAGER_PROJECT_CODE>LASP</TEST_MANAGER_PROJECT_CODE>
-                        <TEST_MANAGER_USERNAME>GenericUserLTM</TEST_MANAGER_USERNAME>
-                        <TEST_MANAGER_PASSWORD>GenericUserLTM</TEST_MANAGER_PASSWORD>
+                        <TEST_MANAGER_RUN_NAME></TEST_MANAGER_RUN_NAME>
+                        <TEST_MANAGER_PROJECT_CODE></TEST_MANAGER_PROJECT_CODE>
+                        <TEST_MANAGER_USERNAME></TEST_MANAGER_USERNAME>
+                        <TEST_MANAGER_PASSWORD></TEST_MANAGER_PASSWORD>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
