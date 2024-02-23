@@ -6,7 +6,7 @@
     <parent>
         <groupId>io.lippia</groupId>
         <artifactId>root</artifactId>
-        <version>3.2.3.8</version>
+        <version>3.3.0.1</version>
     </parent>
 
     <groupId>com.Crowdar</groupId>
@@ -20,8 +20,9 @@
         <base.api.url>https://reqres.in/api/users</base.api.url>
         <cucumber.stepsDefinitions>--glue ar/steps --glue com/crowdar/api/rest</cucumber.stepsDefinitions>
         <cucumber.hooks>--glue com/crowdar/bdd/cukes --glue ar/apiExampleProject/hook</cucumber.hooks>
-		<cucumber.tags>@Success</cucumber.tags>
+        <cucumber.tags>@Success</cucumber.tags>
         <crowdar.cucumber.plugins>--plugin pretty --plugin api.report.CucumberReporter:</crowdar.cucumber.plugins>
+        <test-manager.report>--plugin api.report.TestManagerReporter:</test-manager.report>
 		<crowdar.cucumber.option>src/test/resources/features ${cucumber.hooks} ${cucumber.stepsDefinitions} --tags 'not @Ignore' --tags ${cucumber.tags} ${crowdar.cucumber.plugins}</crowdar.cucumber.option>
         <crowdar.projectType>API</crowdar.projectType>
     </properties>
@@ -37,7 +38,7 @@
         <profile>
             <id>Paralelo</id>
             <activation>
-            	<activeByDefault>true</activeByDefault>
+                <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
                 <apiExample.runner>testngParalell.xml</apiExample.runner>
@@ -45,37 +46,37 @@
         </profile>
 
         <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
-		<!--   Profiles related to Runners ejecutions         -->
-		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+        <!--   Profiles related to Runners ejecutions         -->
+        <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 
-		<profile> 
-			<id>secuencial</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<properties>
-				<runner>testngSecuencial.xml</runner>
-			</properties>
-		</profile>
+        <profile>
+            <id>secuencial</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <runner>testngSecuencial.xml</runner>
+            </properties>
+        </profile>
 
-		<profile> 
-			<id>parallel</id>
-			<properties>
-				<runner>testngParallel.xml</runner>
-			</properties>
-		</profile>
+        <profile>
+            <id>parallel</id>
+            <properties>
+                <runner>testngParallel.xml</runner>
+            </properties>
+        </profile>
 
     </profiles>
     <dependencies>
         <dependency>
-	        <groupId>io.lippia</groupId>
-	        <artifactId>core</artifactId>
-	        <version>3.2.3.8</version>
+            <groupId>io.lippia</groupId>
+            <artifactId>core</artifactId>
+            <version>3.3.0.1</version>
         </dependency>
         <dependency>
             <groupId>io.lippia.report</groupId>
-            <artifactId>cucumber4-adapter</artifactId>
-            <version>1.7.1</version>
+            <artifactId>ltm-cucumber4-adapter</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>io.lippia.report</groupId>
@@ -89,24 +90,32 @@
         </filters>
         <plugins>
             <plugin>
-               <groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.0.0-M4</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M4</version>
                 <configuration>
                     <suiteXmlFiles>
                         <suiteXmlFile>${apiExample.runner}</suiteXmlFile>
                     </suiteXmlFiles>
+                    <systemPropertyVariables>
+                        <TEST_MANAGER_API_HOST></TEST_MANAGER_API_HOST>
+                        <TEST_MANAGER_API_PORT></TEST_MANAGER_API_PORT>
+                        <TEST_MANAGER_RUN_NAME></TEST_MANAGER_RUN_NAME>
+                        <TEST_MANAGER_PROJECT_CODE></TEST_MANAGER_PROJECT_CODE>
+                        <TEST_MANAGER_USERNAME></TEST_MANAGER_USERNAME>
+                        <TEST_MANAGER_PASSWORD></TEST_MANAGER_PASSWORD>
+                    </systemPropertyVariables>
                 </configuration>
             </plugin>
         </plugins>
     </build>
     <repositories>
-		<repository>
-			<id>crowdarRepo</id>
-			<name>crowdar-repository</name>
-			<url>https://nexus-v3-repositories.automation.crowdaronline.com/repository/maven-public/</url>
-		</repository>
-	</repositories>
-    
+        <repository>
+            <id>crowdarRepo</id>
+            <name>crowdar-repository</name>
+            <url>https://nexus-v3-repositories.automation.crowdaronline.com/repository/maven-public/</url>
+        </repository>
+    </repositories>
+
 
 </project>

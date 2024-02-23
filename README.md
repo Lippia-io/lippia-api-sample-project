@@ -16,27 +16,43 @@ This sample project includes the required components as binaries, docker contain
 - Running only with Maven [`Getting started - Running only with Maven`](docs/README_Maven.md)
 - Running with Docker [`Getting started - Running with Docker`](docs/README_Docker.md)
 	
-# Reports[](url)
+# Reports Integrations[](url)
 
-We believe that the reports should express the results of our tests in the most legible, detailed and pleasant way possible, so that in this way, our clients have at their disposal a report on the operation and behavior of their product, as well as the performance of the team. That is why Lippia, in addition to supporting the integration with **ExtentReport**, provides a **ReportServer** for each client.   
-Next, we will see the structure of the project and from where we can access them.
+We believe that the reports should express the results of our tests in the most legible, detailed and pleasant way possible, so that in this way, our clients have at their disposal a report on the operation and behavior of their product, as well as the performance of the team.
+This example offers different reporting outoputs:
+- **Cucumber Reporting Pretty Console Output**: this reporter ius useful to see log execution in console output, in the IDE and in the CI/CD pipeline output.
+- **Lippia Test Manager**  a solution that combines Manual and Automation tests results in a single platform. To know more see [Lippia.io](https://lippia.io)
+- **ExtentReport** a community solution for simple reports. To know more see [Extent Reports documentation](https://www.extentreports.com/docs/versions/4/java/cucumber4.html)
 
-### Reports are generated in the folder called **target**, which will be generated once the execution of the test suite is finished.   
-Note that the following structure is part of the report generated with ExtentReport library.
-```
-├── lippia-api-sample-project
-|   ├── docs
-|   |   └── ...
-|   ├── src
-|   |   └── ...
-│   ├── target
-│   |   └── reports
-|   |       └── index.html
-|   └── ...
-```
+### Cucumber Reporting Pretty Console Output ###
+By default this project uses Cucumber Reporting plugin with console output. This plugin shows results in plain console that is useful for development environments and CI-CD pipelines.
 
-### Graphic example   
-![ExtentReport example](docs/images/extentReportExample.png)
+<img src="docs/images/pretty-console-output.png" width="800px" alt="Pretty console Output"></img>
+
+
+### Lippia Test Manager ###
+This integration uses an adaptar that automatically ingests results of Scenarios into Lippia Test Manager.
+You just simply need to implement [*LTM-adapter-cucumber4-JVM*](https://github.com/Crowdar/LTM-adapter-cucumber4-JVM) and you can see the results in Lippia Test Manager as an Automated Run Result.
+
+To configure your automation project to inject results into LTM, you should do the following things:
+ - Include property reference **${test-manager.report}** in cucumber options (pom.xml)
+ - To set following properties, you need obtain an account in LTM (visit the web https://www.lippia.io/ to start free trial account)
+ - Properties:
+   - TEST_MANAGER_API_HOST: https://example.com
+   - TEST_MANAGER_RUN_NAME: id run in project
+   - TEST_MANAGER_PROJECT_CODE: id project to inject test execution results
+   - TEST_MANAGER_USERNAME: username Account LTM
+   - TEST_MANAGER_PASSWORD: password Account LTM
+
+<img src="docs/images/LTM-RunLists.png" width="800px" alt="Runs List"></img>
+
+<img src="docs/images/LTM-RunAutomatedResult.png" width="800px" alt="Run Automated Result sample"></img>
+
+### Extent Reports Integration ###
+Reports are generated in the folder called **target**, which will be generated once the execution of the test suite is finished.   
+Note that the following structure is part of the report generated with **ExtentReport** library after running the test project using the Extent plugin. Results report can be found at *lippia-api-sample-project/target/reports/index.html*
+
+<img src="docs/images/extentReportExample.png" width="800px" alt="index.hmtl sample"></img>
 
 
 ## Project structure
