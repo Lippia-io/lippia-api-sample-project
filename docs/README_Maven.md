@@ -67,7 +67,7 @@
         * -D is used to define system properties or command-line properties, which Maven will utilize during the project's building and/or execution process.
         * Using -P followed by the profile name allows Maven to apply the configurations associated with that specific profile during the project's build process.
         * -Pparallel: indicates the profile that enables the opening of multiple execution threads.
-        * -PchromeHeadless: indicates the profile that runs in headless mode, meaning it does not open the browser.
+        
 
 
            |                                  Command                                  |                     Description                       |
