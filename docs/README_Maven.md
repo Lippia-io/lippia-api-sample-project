@@ -78,3 +78,36 @@
            | mvn clean test -PParalelo "-Dcucumber.tags='@Accounts and @Regression'"   | Multiple tags and profiles enabled                    |
 
   ```
+
+### How to select Sequential or Parallel Runner:
+
+**Sequential Runner:**
+
+- In the pom.xml file, it looks for the POM in the current directory and assign the value of "testngSecuencial.xml".
+
+- This would be as follows:
+```  
+        <runner>testngSecuencial.xml</runner>
+```         
+
+**Parallel Runner:**
+
+- In the pom.xml file, it looks for the POM in the current directory and assign the value of "testingParalel.xml"
+
+- This would be as follows:
+```
+        <runner>testngParallel.xml</runner>
+```        
+### How to avoid data concurrency:
+
+- In our Lippia core we have a class called **MyThreadLocal** which allows us to save variables in independent threads for each execution. This functionality provides us with the solution to data concurrency in parallel executions.
+
+Use the setData() method to save our variables:
+```
+MyThreadLocal.setData(key, value)
+```
+Use the getData() method to obtain the value of our variable saved in our thread:
+```
+MyThreadLocal.getData(key)
+``` 
+
