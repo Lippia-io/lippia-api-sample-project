@@ -1,0 +1,7 @@
+{
+  "url": "https://api.clockify.me/api",
+  "endpoint": "/v1/workspaces/{{workspaceId}}/projects/",
+  "headers": {
+    "x-api-key": "{{apikey}}"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "url": "https://api.clockify.me/api",
+  "endpoint": "/v1/workspaces",
+  "headers": {
+    "x-api-key": "{{apikey}}",
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "name": "prueba de api 2025 3",
+    "organizationId": "680fe327b398284580ac8fa4"
+  }
+}
