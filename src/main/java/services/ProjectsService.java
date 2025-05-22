@@ -5,14 +5,23 @@ import api.model.addworkspace.getAddworkspaceModel;
 import api.model.allprojects.getAllprojectsModel;
 import api.model.deleteprojects.DeleteprojectsModel;
 import com.crowdar.api.rest.Response;
+import org.springframework.web.client.RestClientException;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
 
 public class ProjectsService extends BaseService {
 
     public static Response get(String jsonName) {
-        return get(jsonName, AddProjectModel.class, setParams());
+        try {
+            return get(jsonName, AddProjectModel[].class, setParams());
+        } catch (RestClientException e) {
+            return get(jsonName, AddProjectModel.class, setParams());
+        } catch (Exception e) {
+            return null;
+        }
+
     }
 
     public static Response post(String jsonRequest) {
@@ -31,7 +40,10 @@ public class ProjectsService extends BaseService {
     private static Map<String, String> setParams() {
         Map<String, String> params = new HashMap<String, String>();
         params.put("apikey", API_KEY.get());
-        params.put("workspaceId", WORKSPACE_ID.get());
+
+        if (WORKSPACE_ID.get() != null) {
+            params.put("workspaceId", WORKSPACE_ID.get());
+        }
 
         if (PROJECT_ID.get() != null) {
             params.put("projectId", PROJECT_ID.get());

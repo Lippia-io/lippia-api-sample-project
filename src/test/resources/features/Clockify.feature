@@ -35,7 +35,7 @@ Feature: clockify
       | GET       | PROJECTS | AllProjects | MTQzZTE1ZDAtMzI5MS00ZmQxLWFmOTMtZTUwOTIyOTBkYTlh |
 
 
-  @Project  @Smoke
+  @Project @Smoke
   Scenario Outline: POST Add a new project
     Given tengo una apiKey correcta <apiKey>
     And I perform a 'GET' to 'WORKSPACE' endpoint with the 'getAllMyWorkspaces' and ''
