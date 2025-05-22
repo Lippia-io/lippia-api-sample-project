@@ -1,0 +1,14 @@
+{
+  "url": "https://api.clockify.me/api",
+  "endpoint": "/v1/workspaces/{{workspaceId}}/clients/{{idCliente}}",
+  "headers": {
+    "x-api-key": "{{apikey}}",
+    "Content-Type": "application/json"
+  },
+  "body":{
+    "address": "{{address}}",
+    "email": "{{email}}",
+    "name": "{{name}}",
+    "note": "{{note}}"
+  }
+}

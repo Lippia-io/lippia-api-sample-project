@@ -11,7 +11,7 @@ Feature: Api example
       | jsonName    | statusCode | operation | entity   | expectedResponse   |
       | exampleJson | 200        | GET       | USER     | users              |
 
-  @Example @Success @NoCandidate @GetData
+  @Example #@Success @NoCandidate @GetData
   Scenario Outline: Example scenario for get user data
     When I perform a '<operation>' to '<entity>' endpoint with the '<jsonName>' and ''
     Then status code <statusCode> is obtained
@@ -21,7 +21,7 @@ Feature: Api example
       | jsonName    | statusCode | operation | entity   |
       | exampleJson | 200        | GET       | USER     |
 
-  @Example @Success @ToBeAutomated @DeleteUser
+  @Example #@Success @ToBeAutomated @DeleteUser
   Scenario Outline: Example scenario for delete user
     When I perform a '<operation>' to '<entity>' endpoint with the '<jsonName>' and ''
     Then status code <statusCode> is obtained
@@ -31,7 +31,7 @@ Feature: Api example
       | jsonName         | statusCode | operation    | entity   |
       | exampleJson      | 204        | DELETE       | USER     |
 
-  @Example @Success @Automated @GetUsers
+  @Example #@Success @Automated @GetUsers
   Scenario Outline: Example scenario for get users
     When I perform a '<operation>' to '<entity>' endpoint with the '<jsonName>' and ''
     Then status code <statusCode> is obtained
