@@ -1,6 +1,6 @@
 Feature: clockify
 
-  @Workspace @Smoke
+  @Workspace @Smoke @Workspace-get
   Scenario Outline: Get all my workspaces
     Given tengo una apiKey correcta <apiKey>
     When I perform a '<operation>' to '<entity>' endpoint with the '<jsonName>' and ''
@@ -13,8 +13,8 @@ Feature: clockify
       | GET       | WORKSPACE | getAllMyWorkspaces | MTQzZTE1ZDAtMzI5MS00ZmQxLWFmOTMtZTUwOTIyOTBkYTlh |
 
 
-  @Workspace @Smoke
-  Scenario Outline: POST Add New Workspaces
+  @Workspace @Smoke @Workspace-add
+  Scenario Outline: Add New Workspaces
     Given tengo una apiKey correcta <apiKey>
     When I perform a '<operation>' to '<entity>' endpoint with the '<jsonName>' and ''
     Then validar que el status code sea 201
@@ -24,7 +24,7 @@ Feature: clockify
       | POST      | ADDWORKSPACE | AddWorkspace | MTQzZTE1ZDAtMzI5MS00ZmQxLWFmOTMtZTUwOTIyOTBkYTlh |
 
 
-  @Project  @Smoke
+  @Project  @Smoke @Project-get
   Scenario Outline: GET all projects on workspace
     Given tengo una apiKey correcta <apiKey>
     When I perform a '<operation>' to '<entity>' endpoint with the '<jsonName>' and ''
@@ -35,8 +35,8 @@ Feature: clockify
       | GET       | PROJECTS | AllProjects | MTQzZTE1ZDAtMzI5MS00ZmQxLWFmOTMtZTUwOTIyOTBkYTlh |
 
 
-  @Project @Smoke
-  Scenario Outline: POST Add a new project
+  @Project @Smoke @Project-add
+  Scenario Outline: Add a new project
     Given tengo una apiKey correcta <apiKey>
     And I perform a 'GET' to 'WORKSPACE' endpoint with the 'getAllMyWorkspaces' and ''
     And obtengo un id de workspace correcto
@@ -47,7 +47,7 @@ Feature: clockify
       | operation | entity   | jsonName      | apiKey                                           |
       | POST      | PROJECTS | addNewProject | MTQzZTE1ZDAtMzI5MS00ZmQxLWFmOTMtZTUwOTIyOTBkYTlh |
 
-  @Project  @Smoke
+  @Project  @Smoke @Project-delete
   Scenario Outline: Delete project from workspace
     Given tengo una apiKey correcta <apiKey>
     And I perform a 'GET' to 'WORKSPACE' endpoint with the 'getAllMyWorkspaces' and ''
@@ -64,7 +64,7 @@ Feature: clockify
       | operation | entity   | jsonName    | apiKey                                           |
       | DELETE    | PROJECTS | ProjectJson | MTQzZTE1ZDAtMzI5MS00ZmQxLWFmOTMtZTUwOTIyOTBkYTlh |
 
-  @Project  @Smoke
+  @Project  @Smoke @Project-find
   Scenario Outline: GET Find project by ID
     Given tengo una apiKey correcta <apiKey>
     And I perform a 'GET' to 'WORKSPACE' endpoint with the 'getAllMyWorkspaces' and ''
@@ -78,7 +78,7 @@ Feature: clockify
       | operation | entity   | jsonName    | apiKey                                           |
       | GET       | PROJECTS | ProjectJson | MTQzZTE1ZDAtMzI5MS00ZmQxLWFmOTMtZTUwOTIyOTBkYTlh |
 
-  @Project  @Smoke
+  @Project  @Smoke @Client-add @Client-get
   Scenario Outline: Crear y consultar nuevo cliente
     Given tengo una apiKey correcta <apiKey>
     And I perform a 'GET' to 'WORKSPACE' endpoint with the 'getAllMyWorkspaces' and ''
